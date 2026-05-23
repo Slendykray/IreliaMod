@@ -3,10 +3,10 @@ using RoR2;
 using RoR2.Skills;
 using System;
 using System.Collections.Generic;
-using HenryMod;
+using IreliaMod;
 using UnityEngine;
 
-namespace HenryMod.Modules
+namespace IreliaMod.Modules
 {
     internal static class Skills
     {
@@ -185,7 +185,7 @@ namespace HenryMod.Modules
 
             skillDef.keywordTokens = skillDefInfo.keywordTokens;
 
-            HenryMod.Modules.Content.AddSkillDef(skillDef);
+            IreliaMod.Modules.Content.AddSkillDef(skillDef);
 
 
             return skillDef;

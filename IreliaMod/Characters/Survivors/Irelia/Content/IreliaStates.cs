@@ -1,0 +1,23 @@
+﻿using IreliaMod.Survivors.Irelia.SkillStates;
+
+namespace IreliaMod.Survivors.Irelia
+{
+    public static class IreliaStates
+    {
+        public static void Init()
+        {
+            Modules.Content.AddEntityState(typeof(SlashCombo));
+
+            Modules.Content.AddEntityState(typeof(Shoot));
+
+            Modules.Content.AddEntityState(typeof(Roll));
+
+            Modules.Content.AddEntityState(typeof(ThrowBomb));
+
+            Modules.Content.AddEntityState(typeof(SkillStates.Dash));
+            Modules.Content.AddEntityState(typeof(SkillStates.BeginVanguardsEdge));
+            Modules.Content.AddEntityState(typeof(SkillStates.Shield));
+            Modules.Content.AddEntityState(typeof(SkillStates.SlashPassive));
+        }
+    }
+}

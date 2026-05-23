@@ -1,4 +1,4 @@
-﻿namespace HenryMod.Modules
+﻿namespace IreliaMod.Modules
 {
     internal static class Tokens
     {
