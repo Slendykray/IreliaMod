@@ -6,8 +6,9 @@ using UnityEngine;
 
 namespace HenryMod.Survivors.Henry.Components
 {
-    internal class HenryWeaponComponent : MonoBehaviour
+    internal class IreliaController : MonoBehaviour
     {
+        public int attackNum;
 
         private float trackerUpdateStopwatch;
         public float trackerUpdateFrequency = 10f;
@@ -21,10 +22,25 @@ namespace HenryMod.Survivors.Henry.Components
         private readonly BullseyeSearch search = new BullseyeSearch();
 
         private TeamComponent teamComponent;
+
+        private SkinnedMeshRenderer sk;
         private void Awake()
         {
             this.characterBody = base.GetComponent<CharacterBody>();
             this.teamComponent = base.GetComponent<TeamComponent>();
+
+            sk = GetChildLocator().FindChild("Blades").GetComponent<SkinnedMeshRenderer>();
+        }
+
+        ChildLocator GetChildLocator()
+        {
+            var body = GetComponent<CharacterBody>();
+
+            var modelTransform = body.modelLocator.modelTransform;
+
+            var childLocator = modelTransform.GetComponent<ChildLocator>();
+
+            return childLocator;
         }
 
         private void FixedUpdate()
@@ -40,6 +56,15 @@ namespace HenryMod.Survivors.Henry.Components
                 this.trackerUpdateStopwatch -= 1f / this.trackerUpdateFrequency;
 
                 SearchTargets();
+            }
+
+            if (attackNum == 3)
+            {
+                sk.material = HenryAssets.bladesGlowMat;
+            }
+            else
+            {
+                sk.material = HenryAssets.bladesDefMat;
             }
         }
 

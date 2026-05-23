@@ -15,9 +15,9 @@ namespace HenryMod.Survivors.Henry
             Modules.Content.AddEntityState(typeof(ThrowBomb));
 
             Modules.Content.AddEntityState(typeof(SkillStates.Dash));
-            Modules.Content.AddEntityState(typeof(SkillStates.Edge));
             Modules.Content.AddEntityState(typeof(SkillStates.BeginVanguardsEdge));
             Modules.Content.AddEntityState(typeof(SkillStates.Shield));
+            Modules.Content.AddEntityState(typeof(SkillStates.SlashPassive));
         }
     }
 }

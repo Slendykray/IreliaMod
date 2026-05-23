@@ -9,26 +9,25 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using static R2API.TempVisualEffectAPI;
 
 namespace HenryMod.Survivors.Henry
 {
     public class HenrySurvivor : SurvivorBase<HenrySurvivor>
     {
         //used to load the assetbundle for this character. must be unique
-        public override string assetBundleName => "bladedancerassetbundle"; //if you do not change this, you are giving permission to deprecate the mod
+        public override string assetBundleName => "ireliaassetbundle"; //if you do not change this, you are giving permission to deprecate the mod
 
         //the name of the prefab we will create. conventionally ending in "Body". must be unique
-        public override string bodyName => "HenryBody"; //if you do not change this, you get the point by now
+        public override string bodyName => "IreliaBody"; //if you do not change this, you get the point by now
 
         //name of the ai master for vengeance and goobo. must be unique
-        public override string masterName => "HenryMonsterMaster"; //if you do not
+        public override string masterName => "IreliaMonsterMaster"; //if you do not
 
         //the names of the prefabs you set up in unity that we will use to build your character
-        public override string modelPrefabName => "mdlHenry";
-        public override string displayPrefabName => "HenryDisplay";
+        public override string modelPrefabName => "mdlIrelia";
+        public override string displayPrefabName => "IreliaDisplay";
 
-        public const string HENRY_PREFIX = HenryPlugin.DEVELOPER_PREFIX + "_HENRY_";
+        public const string HENRY_PREFIX = HenryPlugin.DEVELOPER_PREFIX + "_IRELIA_";
 
         //used when registering your survivor's language tokens
         public override string survivorTokenPrefix => HENRY_PREFIX;
@@ -40,13 +39,13 @@ namespace HenryMod.Survivors.Henry
             subtitleNameToken = HENRY_PREFIX + "SUBTITLE",
 
             characterPortrait = assetBundle.LoadAsset<Texture>("texHenryIcon"),
-            bodyColor = Color.white,
+            bodyColor = new Color32(245, 37, 78, 255),
             sortPosition = 100,
 
             crosshair = Asset.LoadCrosshair("Standard"),
             podPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
-            maxHealth = 110f,
+            maxHealth = 160f,
             healthRegen = 1.5f,
             armor = 0f,
 
@@ -55,15 +54,6 @@ namespace HenryMod.Survivors.Henry
 
         public override CustomRendererInfo[] customRendererInfos => new CustomRendererInfo[]
         {
-                //new CustomRendererInfo
-                //{
-                //    childName = "SwordModel",
-                //    material = assetBundle.LoadMaterial("matHenry"),
-                //},
-                //new CustomRendererInfo
-                //{
-                //    childName = "GunModel",
-                //},
                 new CustomRendererInfo
                 {
                     childName = "Model",
@@ -72,10 +62,6 @@ namespace HenryMod.Survivors.Henry
                 {
                     childName = "Blades",
                 },
-                new CustomRendererInfo
-                {
-                    childName = "Visor",
-                }
         };
 
         public override UnlockableDef characterUnlockableDef => HenryUnlockables.characterUnlockableDef;
@@ -130,7 +116,7 @@ namespace HenryMod.Survivors.Henry
         private void AdditionalBodySetup()
         {
             AddHitboxes();
-            bodyPrefab.AddComponent<HenryWeaponComponent>();
+            bodyPrefab.AddComponent<IreliaController>();
             //bodyPrefab.AddComponent<HuntressTrackerComopnent>();
             //anything else here
         }
@@ -240,7 +226,7 @@ namespace HenryMod.Survivors.Henry
                     true
                 ));
             //custom Skilldefs can have additional fields that you can set manually
-            primarySkillDef1.stepCount = 2;
+            primarySkillDef1.stepCount = 4;
             primarySkillDef1.stepGraceDuration = 0.5f;
 
 
@@ -476,14 +462,11 @@ namespace HenryMod.Survivors.Henry
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
         }
 
-
-
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)
         {
-            if (sender.HasBuff(HenryBuffs.armorBuff))
-            {
-                args.armorAdd += 300;
-            }
+            int num = sender.GetBuffCount(HenryBuffs.atkSpeedBuff);
+            args.attackSpeedMultAdd += num * SlashCombo.buffCoefficient;
+
         }
     }
 }

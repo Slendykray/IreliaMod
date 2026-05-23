@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3392549027322744912}
   m_Layer: 0
-  m_Name: SlashAttack
+  m_Name: IreliaSlashAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -24,9 +24,15 @@ namespace HenryMod.Survivors.Henry
 
 
         public static GameObject shieldEffect;
+        public static GameObject bladeVFX;
+        
         public static GameObject dashEffect;
 
-        public static GameObject bladeVFX;
+        public static Material bladesGlowMat;
+        public static Material bladesDefMat;
+
+        //public static GameObject bladeHitImpactEffect;
+        //public static GameObject bladeSwingEffect;
 
         public static void Init(AssetBundle assetBundle)
         {
@@ -34,6 +40,7 @@ namespace HenryMod.Survivors.Henry
             _assetBundle = assetBundle;
 
             swordHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("HenrySwordHit");
+
 
             CreateEffects();
 
@@ -45,13 +52,25 @@ namespace HenryMod.Survivors.Henry
         {
             CreateBombExplosionEffect();
 
-            swordSwingEffect = _assetBundle.LoadEffect("HenrySwordSwingEffect", true);
-            swordHitImpactEffect = _assetBundle.LoadEffect("ImpactHenrySlash");
+            //swordSwingEffect = _assetBundle.LoadEffect("HenrySwordSwingEffect", true);
+            //swordHitImpactEffect = _assetBundle.LoadEffect("ImpactHenrySlash");
+
+            //swordSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", parentToTransform: true, soundName: "HenrySwordHit");
+
+            swordSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", true);
+            swordHitImpactEffect = _assetBundle.LoadEffect("IreliaHit");
+
+            //bladeSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", true);
+            //bladeHitImpactEffect = _assetBundle.LoadEffect("IreliaHit");
 
             shieldEffect = _assetBundle.LoadAsset<GameObject>("Shield2");
+            bladeVFX = _assetBundle.LoadAsset<GameObject>("BladeVFX");
+
             dashEffect = _assetBundle.LoadAsset<GameObject>("Dash2");
 
-            bladeVFX = _assetBundle.LoadAsset<GameObject>("BladeVFX");
+            bladesDefMat = _assetBundle.LoadAsset<Material>("BladeDefMat");
+            bladesGlowMat = _assetBundle.LoadAsset<Material>("BladeGlowfMat");
+
         }
 
         private static void CreateBombExplosionEffect()

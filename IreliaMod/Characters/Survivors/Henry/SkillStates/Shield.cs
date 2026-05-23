@@ -27,7 +27,8 @@ namespace HenryMod.Survivors.Henry.SkillStates
 
         private Transform slamIndicatorInstance;
 
-        public GameObject tracerEffectPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerGoldGat");
+        private GameObject blades;
+
         public override void OnEnter()
         {
             base.OnEnter();
@@ -35,6 +36,14 @@ namespace HenryMod.Survivors.Henry.SkillStates
             vfxInstance.transform.position = GetModelChildLocator().FindChild("ShieldPos").position;
 
             characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, duration);
+
+            //PlayAnimation("FullBody, Override", "Special", "Special.playbackRate", duration);
+
+            PlayCrossfade("FullBody, Override", "Special", "Special.playbackRate", duration, 0.05f);
+
+            blades = GetModelChildLocator().FindChild("Blades").gameObject;
+
+            blades.SetActive(false);
         }
 
         protected override void InitDurationValues()
@@ -85,6 +94,7 @@ namespace HenryMod.Survivors.Henry.SkillStates
                 //spawn network id
                 BladeHoming homing = blade.AddComponent<BladeHoming>();
                 homing.pos = hurtbox.healthComponent.body.corePosition;
+                //homing.pos = hurtbox.transform.position;
                 UnityEngine.Object.Destroy(blade, 0.5f);
                 
 
@@ -102,16 +112,17 @@ namespace HenryMod.Survivors.Henry.SkillStates
                 hurtbox.healthComponent.TakeDamage(damageInfo);
                 GlobalEventManager.instance.OnHitEnemy(damageInfo, hurtbox.healthComponent.gameObject);
                 GlobalEventManager.instance.OnHitAll(damageInfo, hurtbox.healthComponent.gameObject);
-                //GameObject hitEffectPrefab = Modules.Assets.swordHitImpactEffect;
-                //if (hitEffectPrefab)
-                //{
-                //    EffectManager.SpawnEffect(hitEffectPrefab, new EffectData
-                //    {
-                //        origin = hurtbox.healthComponent.gameObject.transform.position,
-                //        rotation = Quaternion.identity,
-                //        networkSoundEventIndex = Modules.Assets.swordHitSoundEvent.index
-                //    }, true);
-                //}
+
+                GameObject hitEffectPrefab = HenryAssets.swordHitImpactEffect;
+                if (hitEffectPrefab)
+                {
+                    EffectManager.SpawnEffect(hitEffectPrefab, new EffectData
+                    {
+                        origin = hurtbox.healthComponent.gameObject.transform.position,
+                        rotation = Quaternion.identity,
+                        networkSoundEventIndex = HenryAssets.swordHitSoundEvent.index
+                    }, true);
+                }
 
             }
         }
@@ -128,9 +139,13 @@ namespace HenryMod.Survivors.Henry.SkillStates
 
         public override void OnExit()
         {
+            PlayCrossfade("Gesture, Override", "SpecialRecover", "Special.playbackRate", duration, 0.05f);
+            //PlayAnimation("Gesture, Override", "SpecialRecover", "Special.playbackRate", duration);
+
+            blades.SetActive(true);
 
             if (this.slamIndicatorInstance) UnityEngine.Object.Destroy(this.slamIndicatorInstance.gameObject, 0.5f);
-            //if (this.slamIndicatorInstance) EntityState.Destroy(this.slamIndicatorInstance.gameObject);
+
             base.OnExit();
 
         }

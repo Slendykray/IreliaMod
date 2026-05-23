@@ -4882,7 +4882,7 @@ GameObject:
   - component: {fileID: 8785684639220027715}
   - component: {fileID: 8785684639220027714}
   m_Layer: 0
-  m_Name: Hit
+  m_Name: IreliaHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -32,7 +32,8 @@ namespace HenryMod.Survivors.Henry.SkillStates
             this.originalLayer = base.gameObject.layer;
 
 
-            this.overlapAttack = base.InitMeleeOverlap(HenryStaticValues.dashDamageCoefficient, HenryAssets.swordHitImpactEffect, base.GetModelTransform(), "SwordGroup");
+            //this.overlapAttack = base.InitMeleeOverlap(HenryStaticValues.dashDamageCoefficient, HenryAssets.swordHitImpactEffect, base.GetModelTransform(), "SwordGroup");
+            this.overlapAttack = base.InitMeleeOverlap(HenryStaticValues.dashDamageCoefficient, null, base.GetModelTransform(), "SwordGroup");
 
             this.overlapAttack.damageType.damageSource = DamageSource.Secondary;
 
@@ -42,8 +43,9 @@ namespace HenryMod.Survivors.Henry.SkillStates
 
             //delete vfx solve!!!!!!
             GameObject dashEf = UnityEngine.Object.Instantiate(HenryAssets.dashEffect, characterBody.corePosition, Util.QuaternionSafeLookRotation(dashVector), transform);
+            UnityEngine.Object.Destroy(dashEf, duration + 1f);
 
-           
+            PlayCrossfade("FullBody, Override", "Dash", "Dash.playbackRate", duration, 0.05f);
         }
 
 
@@ -76,6 +78,17 @@ namespace HenryMod.Survivors.Henry.SkillStates
                         }
                    
                     }
+
+                    GameObject hitEffectPrefab = HenryAssets.swordHitImpactEffect;
+                    if (hitEffectPrefab)
+                    {
+                        EffectManager.SpawnEffect(hitEffectPrefab, new EffectData
+                        {
+                            origin = hitResults[i].healthComponent.gameObject.transform.position,
+                            rotation = Quaternion.identity,
+                            networkSoundEventIndex = HenryAssets.swordHitSoundEvent.index
+                        }, true);
+                    }
                 }
             }
 
@@ -97,7 +110,9 @@ namespace HenryMod.Survivors.Henry.SkillStates
 
         public override void OnExit()
         {
-           
+            //PlayCrossfade("Gesture, Override", "DashRecover", "Dash.playbackRate", duration, 0.1f * duration);
+
+
             base.OnExit();
 
             base.characterMotor.velocity *= 0.1f;
