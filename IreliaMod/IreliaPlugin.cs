@@ -8,13 +8,19 @@ using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
+
+using MonoMod.RuntimeDetour;
+
+using System;
+
+
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 
 //rename this namespace
 namespace IreliaMod
 {
-    //[BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     public class IreliaPlugin : BaseUnityPlugin
@@ -40,6 +46,8 @@ namespace IreliaMod
 
             SetVFX();
 
+            IreliaConfig.Init();
+
             // used when you want to properly set up language folders
             Modules.Language.Init();
 
@@ -57,6 +65,34 @@ namespace IreliaMod
             //R2API.TempVisualEffectAPI.EffectCondition condition = body => body.healthComponent.combinedHealth < bodyInfo.damage * HenryStaticValues.dashDamageCoefficient;
             R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
             R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
+        }
+
+        private static Hook AddBankAfterAKSoundEngineInit;
+
+        private void Start()
+        {
+            AddBankAfterAKSoundEngineInit = new Hook(
+                typeof(AkSoundEngineInitialization).GetMethodCached(nameof(AkSoundEngineInitialization.InitializeSoundEngine)),
+                typeof(IreliaPlugin).GetMethodCached(nameof(AddBank)));
+
+        }
+
+        private static bool AddBank(Func<AkSoundEngineInitialization, bool> orig, AkSoundEngineInitialization self)
+        {
+            var res = orig(self);
+
+            if (AkSoundEngine.IsInitialized())
+            {
+                SetVolume();
+                IreliaConfig.voiceVolume.SettingChanged += (obj, args) => SetVolume();
+            }
+
+            return res;
+        }
+
+        public static void SetVolume()
+        {
+            AkSoundEngine.SetRTPCValue("Volume_Irelia_Voice", IreliaConfig.voiceVolume.Value);
         }
     }
 }

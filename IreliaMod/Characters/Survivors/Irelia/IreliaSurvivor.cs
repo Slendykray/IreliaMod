@@ -96,7 +96,7 @@ namespace IreliaMod.Survivors.Irelia
 
             base.InitializeCharacter();
 
-            IreliaConfig.Init();
+            //IreliaConfig.Init();
             IreliaStates.Init();
             IreliaTokens.Init();
 
@@ -117,6 +117,8 @@ namespace IreliaMod.Survivors.Irelia
         {
             AddHitboxes();
             bodyPrefab.AddComponent<IreliaController>();
+            displayPrefab.AddComponent<MenuSound>();
+            bodyPrefab.AddComponent<QuoteController>();
             //bodyPrefab.AddComponent<HuntressTrackerComopnent>();
             //anything else here
         }
@@ -148,7 +150,7 @@ namespace IreliaMod.Survivors.Irelia
             //remove the genericskills from the commando body we cloned
             Skills.ClearGenericSkills(bodyPrefab);
             //add our own
-            AddPassiveSkill();
+            //AddPassiveSkill();
             AddPrimarySkills();
             AddSecondarySkills();
             AddUtiitySkills();
@@ -165,7 +167,7 @@ namespace IreliaMod.Survivors.Irelia
                 enabled = true,
                 skillNameToken = HENRY_PREFIX + "PASSIVE_NAME",
                 skillDescriptionToken = HENRY_PREFIX + "PASSIVE_DESCRIPTION",
-                keywordToken = "KEYWORD_STUNNING",
+                //keywordToken = "KEYWORD_STUNNING",
                 icon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
             };
 
@@ -217,10 +219,10 @@ namespace IreliaMod.Survivors.Irelia
             //it is also a SteppedSkillDef. Custom Skilldefs are very useful for custom behaviors related to casting a skill. see ror2's different skilldefs for reference
             SteppedSkillDef primarySkillDef1 = Skills.CreateSkillDef<SteppedSkillDef>(new SkillDefInfo
                 (
-                    "HenrySlash",
+                    "IreliaSlash",
                     HENRY_PREFIX + "PRIMARY_SLASH_NAME",
                     HENRY_PREFIX + "PRIMARY_SLASH_DESCRIPTION",
-                    assetBundle.LoadAsset<Sprite>("texPrimaryIcon"),
+                    assetBundle.LoadAsset<Sprite>("Primary"),
                     new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)),
                     "Weapon",
                     true
@@ -241,10 +243,10 @@ namespace IreliaMod.Survivors.Irelia
             SkillDef secondarySkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "IreliaDash",
-                skillNameToken = HENRY_PREFIX + "SECONDARY_GUN_NAME",
-                skillDescriptionToken = HENRY_PREFIX + "SECONDARY_GUN_DESCRIPTION",
+                skillNameToken = HENRY_PREFIX + "SECONDARY_DASH_NAME",
+                skillDescriptionToken = HENRY_PREFIX + "SECONDARY_DASH_DESCRIPTION",
                 keywordTokens = new string[] { "KEYWORD_AGILE" },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("Secondary"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Dash)),
                 activationStateMachineName = "Body",
@@ -281,15 +283,16 @@ namespace IreliaMod.Survivors.Irelia
             SkillDef utilitySkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "IreliaEdge",
-                skillNameToken = HENRY_PREFIX + "UTILITY_ROLL_NAME",
-                skillDescriptionToken = HENRY_PREFIX + "UTILITY_ROLL_DESCRIPTION",
-                skillIcon = assetBundle.LoadAsset<Sprite>("texUtilityIcon"),
+                skillNameToken = HENRY_PREFIX + "UTILITY_EDGE_NAME",
+                skillDescriptionToken = HENRY_PREFIX + "UTILITY_EDGE_DESCRIPTION",
+                skillIcon = assetBundle.LoadAsset<Sprite>("Utility"),
+                keywordTokens = new string[] { "KEYWORD_STUNNING" },
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.BeginVanguardsEdge)),
                 activationStateMachineName = "Body",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
-                baseRechargeInterval = 4f,
+                baseRechargeInterval = 10f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
@@ -315,31 +318,13 @@ namespace IreliaMod.Survivors.Irelia
         {
             Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, SkillSlot.Special);
 
-            //a basic skill. some fields are omitted and will just have default values
-            //SkillDef specialSkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
-            //{
-            //    skillName = "HenryBomb",
-            //    skillNameToken = HENRY_PREFIX + "SPECIAL_BOMB_NAME",
-            //    skillDescriptionToken = HENRY_PREFIX + "SPECIAL_BOMB_DESCRIPTION",
-            //    skillIcon = assetBundle.LoadAsset<Sprite>("texSpecialIcon"),
-
-            //    activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shield)),
-            //    //setting this to the "weapon2" EntityStateMachine allows us to cast this skill at the same time primary, which is set to the "weapon" EntityStateMachine
-            //    activationStateMachineName = "Body", interruptPriority = EntityStates.InterruptPriority.Skill,
-
-            //    baseMaxStock = 1,
-            //    baseRechargeInterval = 10f,
-
-            //    isCombatSkill = true,
-            //    mustKeyPress = true,
-            //});
             SkillDef specialSkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = "IreliaShield",
-                skillNameToken = HENRY_PREFIX + "SPECIAL_NUKE_NAME",
-                skillDescriptionToken = HENRY_PREFIX + "SPECIAL_NUKE_DESCRIPTION",
-                skillIcon = assetBundle.LoadAsset<Sprite>("texSpecialIcon"),
-                //keywordTokens = new string[] { "KEYWORD_STUNNING" },
+                skillNameToken = HENRY_PREFIX + "SPECIAL_SHIELD_NAME",
+                skillDescriptionToken = HENRY_PREFIX + "SPECIAL_SHIELD_DESCRIPTION",
+                skillIcon = assetBundle.LoadAsset<Sprite>("Special"),
+                keywordTokens = new string[] { "KEYWORD_STUNNING" },
 
                 //activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.Mage.Weapon.ChargeIcebomb)),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shield)),

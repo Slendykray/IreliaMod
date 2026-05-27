@@ -46,6 +46,8 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
             UnityEngine.Object.Destroy(dashEf, duration + 1f);
 
             PlayCrossfade("FullBody, Override", "Dash", "Dash.playbackRate", duration, 0.05f);
+
+            Util.PlaySound("Play_Random_Dash", gameObject);
         }
 
 
@@ -113,13 +115,15 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
             //PlayCrossfade("Gesture, Override", "DashRecover", "Dash.playbackRate", duration, 0.1f * duration);
 
 
-            base.OnExit();
+        
 
             base.characterMotor.velocity *= 0.1f;
             SmallHop(characterMotor, 2f);
 
             base.gameObject.layer = this.originalLayer;
             base.characterMotor.Motor.RebuildCollidableLayers();
+
+            base.OnExit();
 
             //if (kill)
             //{

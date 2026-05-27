@@ -46,27 +46,27 @@ namespace IreliaMod.Survivors.Irelia
 
             #region Passive
             Language.Add(prefix + "PASSIVE_NAME", "Irelia passive");
-            Language.Add(prefix + "PASSIVE_DESCRIPTION", "Sample text.");
+            Language.Add(prefix + "PASSIVE_DESCRIPTION", "Every fourth attack becomes a quick double attack.");
             #endregion
 
             #region Primary
-            Language.Add(prefix + "PRIMARY_SLASH_NAME", "Sword");
-            Language.Add(prefix + "PRIMARY_SLASH_DESCRIPTION", Tokens.agilePrefix + $"Swing forward for <style=cIsDamage>{100f * IreliaStaticValues.swordDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_SLASH_NAME", "Slash");
+            Language.Add(prefix + "PRIMARY_SLASH_DESCRIPTION", Tokens.agilePrefix + $"Attack with 6 blades, for {Tokens.DamageValueText(IreliaStaticValues.swordDamageCoefficient)}. Attacking repeatedly {Tokens.UtilityText("increases attack speed")} by {Tokens.UtilityText(SkillStates.SlashCombo.buffCoefficient * 100f + "%")} for {Tokens.UtilityText(SkillStates.SlashCombo.buffDur + " seconds")}.");
             #endregion
 
             #region Secondary
-            Language.Add(prefix + "SECONDARY_GUN_NAME", "Handgun");
-            Language.Add(prefix + "SECONDARY_GUN_DESCRIPTION", Tokens.agilePrefix + $"Fire a handgun for <style=cIsDamage>{100f * IreliaStaticValues.gunDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "SECONDARY_DASH_NAME", "Bladesurge");
+            Language.Add(prefix + "SECONDARY_DASH_DESCRIPTION", Tokens.agilePrefix + $"Dash forward, for {Tokens.DamageValueText(IreliaStaticValues.dashDamageCoefficient)}. Hitting enemy lowers Special cooldown by 1s, up to 3s. {Tokens.UtilityText("Eliminations reset the dash")}. Enemies are marked when within execution threshold.");
             #endregion
 
             #region Utility
-            Language.Add(prefix + "UTILITY_ROLL_NAME", "Roll");
-            Language.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Roll a short distance, gaining <style=cIsUtility>300 armor</style>. <style=cIsUtility>You cannot be hit during the roll.</style>");
+            Language.Add(prefix + "UTILITY_EDGE_NAME", "Vanguard's Edge");
+            Language.Add(prefix + "UTILITY_EDGE_DESCRIPTION", Tokens.StunningPrefix() + $"Fly backwards, then release a diamond-shaped volley of blades for {Tokens.DamageValueText(IreliaStaticValues.edgeDamageCoefficient)}.");
             #endregion
 
             #region Special
-            Language.Add(prefix + "SPECIAL_BOMB_NAME", "Bomb");
-            Language.Add(prefix + "SPECIAL_BOMB_DESCRIPTION", $"Throw a bomb for <style=cIsDamage>{100f * IreliaStaticValues.bombDamageCoefficient}% damage</style>.");
+            Language.Add(prefix + "SPECIAL_SHIELD_NAME", "Defiant Dance");
+            Language.Add(prefix + "SPECIAL_SHIELD_DESCRIPTION", Tokens.StunningPrefix() + $"Form a defensive barrier of blades that makes you {Tokens.UtilityText("invulnerable")}. After {Tokens.UtilityText("3 seconds")}, the blades explode for {Tokens.DamageValueText(IreliaStaticValues.shieldDamageCoefficient)}.");
             #endregion
 
             #region Achievements

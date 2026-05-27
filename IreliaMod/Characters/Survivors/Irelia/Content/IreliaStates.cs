@@ -16,6 +16,7 @@ namespace IreliaMod.Survivors.Irelia
 
             Modules.Content.AddEntityState(typeof(SkillStates.Dash));
             Modules.Content.AddEntityState(typeof(SkillStates.BeginVanguardsEdge));
+            Modules.Content.AddEntityState(typeof(SkillStates.VanguardsEdge));
             Modules.Content.AddEntityState(typeof(SkillStates.Shield));
             Modules.Content.AddEntityState(typeof(SkillStates.SlashPassive));
         }

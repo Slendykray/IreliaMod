@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{45FBF221-4897-01DC-0AC9-568D6FCC92EB}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="3252579413" Name="Volume_Irelia_Voice"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="3417082243" Type="User" Language="SFX" Hash="{E9433179-4C80-0FB0-0863-B8111CE1D032}">
+			<ShortName>IreliaBank</ShortName>
+			<Path>IreliaBank.bnk</Path>
+			<Media>
+				<File Id="49884936" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear1.wav</ShortName>
+					<CachePath>SFX/Clear1_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="247979181" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UtilityImpact.wav</ShortName>
+					<CachePath>SFX/UtilityImpact_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="255415109" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary1.wav</ShortName>
+					<CachePath>SFX/Primary1_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="256846165" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death.wav</ShortName>
+					<CachePath>SFX/Death_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="266311733" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SpecialCharge.wav</ShortName>
+					<CachePath>SFX/SpecialCharge_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="315400640" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary3.wav</ShortName>
+					<CachePath>SFX/Primary3_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="372938331" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TakingCeremonialDagger.wav</ShortName>
+					<CachePath>SFX/TakingCeremonialDagger_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="663448044" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dash1.wav</ShortName>
+					<CachePath>SFX/Dash1_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="728914966" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TakingTriTippedDagger.wav</ShortName>
+					<CachePath>SFX/TakingTriTippedDagger_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="765247232" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary5.wav</ShortName>
+					<CachePath>SFX/Primary5_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="773608577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SpecialProjectilePop.wav</ShortName>
+					<CachePath>SFX/SpecialProjectilePop_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="813527898" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dash2.wav</ShortName>
+					<CachePath>SFX/Dash2_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="824973440" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MithrixKill.wav</ShortName>
+					<CachePath>SFX/MithrixKill_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="891034906" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IntoUtility.wav</ShortName>
+					<CachePath>SFX/IntoUtility_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="936145382" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TakeFrostRelic.wav</ShortName>
+					<CachePath>SFX/TakeFrostRelic_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="960584940" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary4.wav</ShortName>
+					<CachePath>SFX/Primary4_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1008262305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary2.wav</ShortName>
+					<CachePath>SFX/Primary2_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1029006959" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear2.wav</ShortName>
+					<CachePath>SFX/Clear2_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1068846924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MenuSelect.wav</ShortName>
+					<CachePath>SFX/MenuSelect_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1068996500" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FirstLevelStart.wav</ShortName>
+					<CachePath>SFX/FirstLevelStart_EDCD4836.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1172822028" Name="Play_Death">
+					<MediaRefs>
+						<MediaRef Id="256846165"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1912845862" Name="Play_FirstLevelStart">
+					<MediaRefs>
+						<MediaRef Id="1068996500"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="143413728" Name="Play_IntoUtility">
+					<MediaRefs>
+						<MediaRef Id="891034906"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="40516875" Name="Play_MenuSelect">
+					<MediaRefs>
+						<MediaRef Id="1068846924"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4060337257" Name="Play_MithrixKill">
+					<MediaRefs>
+						<MediaRef Id="824973440"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="345818273" Name="Play_Random_Clear">
+					<MediaRefs>
+						<MediaRef Id="49884936"/>
+						<MediaRef Id="1029006959"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3992142222" Name="Play_Random_Dash">
+					<MediaRefs>
+						<MediaRef Id="663448044"/>
+						<MediaRef Id="813527898"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="777342324" Name="Play_Random_Primary">
+					<MediaRefs>
+						<MediaRef Id="255415109"/>
+						<MediaRef Id="315400640"/>
+						<MediaRef Id="765247232"/>
+						<MediaRef Id="960584940"/>
+						<MediaRef Id="1008262305"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1733778635" Name="Play_SpecialCharge">
+					<MediaRefs>
+						<MediaRef Id="266311733"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3211982643" Name="Play_SpecialProjectilePop">
+					<MediaRefs>
+						<MediaRef Id="266311733"/>
+						<MediaRef Id="773608577"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3458780708" Name="Play_TakeFrostRelic">
+					<MediaRefs>
+						<MediaRef Id="936145382"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3169746167" Name="Play_TakingCeremonialDagger">
+					<MediaRefs>
+						<MediaRef Id="372938331"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3064956693" Name="Play_TakingTriTippedDagger">
+					<MediaRefs>
+						<MediaRef Id="728914966"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2647463512" Name="Play_UtilityImpact">
+					<MediaRefs>
+						<MediaRef Id="247979181"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="3252579413" Name="Volume_Irelia_Voice"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{684C8A05-6B36-7E30-421D-8F4BFA1A3BB4}</FileHash>
+</SoundBanksInfo>

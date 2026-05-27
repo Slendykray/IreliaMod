@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9DADB22C-4A36-4832-8541-47D30910243E}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{9DADB22C-4A36-4832-8541-47D30910243E}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Random_Primary" ID="{C115DF6A-9FF0-4E55-AC0C-DD91126FEBE8}">
+					<ChildrenList>
+						<Action Name="" ID="{001E95B9-D5B1-4AE0-BA85-A1B16D6AB5C8}" ShortID="923303708">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Random_Primary" ID="{0A74E639-D431-4047-990E-76E629838B7C}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Random_Dash" ID="{FEA70289-D985-4A9F-ABA9-795B0A55972B}">
+					<ChildrenList>
+						<Action Name="" ID="{79F4E6FD-46DA-4F87-A774-7B32B2621A22}" ShortID="686964929">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Random_Dash" ID="{72A3B655-2BA3-4E72-BC17-BF4B5D5C70D4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SpecialCharge" ID="{3932F85E-4BFF-4DD4-BE57-50CD0BE71726}">
+					<ChildrenList>
+						<Action Name="" ID="{630470CC-16E4-42C2-B496-453C485B36E8}" ShortID="398796583">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SpecialCharge" ID="{DC283092-1257-463B-82D8-C558E74B9EE4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SpecialProjectilePop" ID="{0E3CA1C9-9ACD-4E32-96A0-3E23271E5D0E}">
+					<ChildrenList>
+						<Action Name="" ID="{18EA6174-4F06-43D9-9AD8-402490D55C79}" ShortID="390893631">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SpecialCharge" ID="{DC283092-1257-463B-82D8-C558E74B9EE4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B8A2713A-F407-431B-BA74-B8EF1181C0EE}" ShortID="101681425">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SpecialProjectilePop" ID="{1034AEC0-7624-4672-850D-363C883AC170}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuSelect" ID="{9379E962-5A36-4FA7-9D08-2BB05E032843}">
+					<ChildrenList>
+						<Action Name="" ID="{AD88B92D-D006-4BD9-BFB3-48F59CAEDAFD}" ShortID="227754215">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MenuSelect" ID="{2675F85F-A7A2-4100-A9CA-5A2FE27331A0}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Random_Clear" ID="{31913F5F-EBC8-4C9D-88DC-46DF1F76D677}">
+					<ChildrenList>
+						<Action Name="" ID="{110F445A-95AB-45CE-9CE4-6D9610F6C109}" ShortID="343577255">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Random_Clear" ID="{1F9F5837-95A6-46ED-AF51-CDCE4CAEE2D4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TakingCeremonialDagger" ID="{5D3A54D4-ACE7-4D9E-A36E-61C052601113}">
+					<ChildrenList>
+						<Action Name="" ID="{38150808-9E9A-4A18-BAAE-3D0567C3CA2E}" ShortID="472449060">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TakingCeremonialDagger" ID="{0B4279C5-600B-4063-9704-870FCB389BB7}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TakingTriTippedDagger" ID="{AF06444C-6CC7-42E0-BD26-62CE2FDD783E}">
+					<ChildrenList>
+						<Action Name="" ID="{7FF67C9B-E340-42C0-9D24-F330839EB130}" ShortID="448102534">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TakingTriTippedDagger" ID="{DBC296E0-0EDB-413F-9150-0A2281D02283}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TakeFrostRelic" ID="{8CBAD041-E45D-4048-A5C0-404EE444AD1C}">
+					<ChildrenList>
+						<Action Name="" ID="{1D7F21C7-CFC6-4CA9-B6A5-A96040562441}" ShortID="853814765">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TakeFrostRelic" ID="{A1870DBA-A12E-4CAC-9741-246E66E464BD}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Death" ID="{20E7AE9F-4D06-428E-824F-5A1640B063BB}">
+					<ChildrenList>
+						<Action Name="" ID="{5CD7F1E3-3651-4FA7-905C-3E07C473A346}" ShortID="201573077">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Death" ID="{E8CC4A9E-2EF6-42CC-A80A-22F93C8E5C91}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MithrixKill" ID="{B03D5E51-0FFE-48EB-8BDA-2C38B95E6E13}">
+					<ChildrenList>
+						<Action Name="" ID="{B82BB227-AFB4-4AE8-93D5-163EEFEB9BC3}" ShortID="477073913">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MithrixKill" ID="{CAF1CF32-30CD-4FCF-9375-A4EA28523F2C}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FirstLevelStart" ID="{27F60CCE-C6DE-4F2A-973C-5C608D814600}">
+					<ChildrenList>
+						<Action Name="" ID="{6204709C-1FC9-45FA-BA19-92436B38703D}" ShortID="550607993">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FirstLevelStart" ID="{B8C5A153-3939-4AEF-AD63-BF5A545EF73C}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_IntoUtility" ID="{125F226D-DEF3-45E7-9EB1-322E796E9B6C}">
+					<ChildrenList>
+						<Action Name="" ID="{EC6B2C33-8FF8-41D1-9E5B-261F52A0B2AB}" ShortID="582429950">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="IntoUtility" ID="{3A4DB2D5-7AAA-4D4E-898A-2D6E7D690366}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UtilityImpact" ID="{83590EFB-75FE-4DEF-9342-C6B4FFC97D67}">
+					<ChildrenList>
+						<Action Name="" ID="{5AD7A9E1-ADFE-4D99-8D7C-77FF9C5381F2}" ShortID="649424198">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UtilityImpact" ID="{3764C4E4-B3DA-4DAA-A9B3-A8270DF7970D}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -31,7 +31,7 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
             hitHopVelocity = 4f;
 
             //swingSoundString = "HenrySwordSwing";
-            swingSoundString = "";
+            swingSoundString = "Play_Random_Primary";
             hitSoundString = "";
             muzzleString = "SwingLeft";
             playbackRateParam = "Slash.playbackRate";

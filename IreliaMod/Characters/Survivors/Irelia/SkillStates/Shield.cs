@@ -44,6 +44,8 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
             blades = GetModelChildLocator().FindChild("Blades").gameObject;
 
             blades.SetActive(false);
+
+            Util.PlaySound("Play_SpecialCharge", gameObject);
         }
 
         protected override void InitDurationValues()
@@ -73,6 +75,8 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
 
         private void Fire()
         {
+            Util.PlaySound("Play_SpecialProjectilePop", gameObject);
+
             UnityEngine.Object.Destroy(vfxInstance);
             vfxInstance = null;
 

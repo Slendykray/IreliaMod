@@ -3,6 +3,7 @@ using UnityEngine;
 using IreliaMod.Modules;
 using System;
 using RoR2.Projectile;
+using UnityEngine.AddressableAssets;
 
 namespace IreliaMod.Survivors.Irelia
 {
@@ -31,9 +32,7 @@ namespace IreliaMod.Survivors.Irelia
         public static Material bladesGlowMat;
         public static Material bladesDefMat;
 
-        //public static GameObject bladeHitImpactEffect;
-        //public static GameObject bladeSwingEffect;
-
+        public static GameObject edgeProjectilePrefab;
         public static void Init(AssetBundle assetBundle)
         {
 
@@ -128,6 +127,20 @@ namespace IreliaMod.Survivors.Irelia
                 bombController.ghostPrefab = _assetBundle.CreateProjectileGhostPrefab("HenryBombGhost");
             
             bombController.startSound = "";
+
+
+
+            edgeProjectilePrefab = Asset.CloneProjectilePrefab("MageFireboltBasic", "IreliaEdgeProjectile");
+
+            //napalm = R2API.PrefabAPI.InstantiateClone(fireEffect, "ArtilleristNapalm");
+            ProjectileImpactExplosion napalmExplosion = edgeProjectilePrefab.GetComponent<ProjectileImpactExplosion>();
+            napalmExplosion.fireChildren = true;
+            napalmExplosion.childrenCount = 1;
+            GameObject napalmDot = R2API.PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Molotov/MolotovProjectileDotZone.prefab").WaitForCompletion(), "ArtilleristNapalmDot");
+            napalmDot.transform.localScale *= 2f;
+            napalmExplosion.childrenProjectilePrefab = napalmDot;
+            napalmExplosion.transformSpace = ProjectileImpactExplosion.TransformSpace.Normal;
+            napalmExplosion.falloffModel = BlastAttack.FalloffModel.None;
         }
         #endregion projectiles
     }

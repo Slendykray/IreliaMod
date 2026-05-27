@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2317456984574892428, guid: a32fb17ad7dfd7b4f8b893feaf7d7512,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c5dbdec96277aed4d9a80e16e358d4e8, type: 2}
     - target: {fileID: 7238953315125949094, guid: a32fb17ad7dfd7b4f8b893feaf7d7512,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -162,11 +157,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9e69c66bbdcc73f42806a73fa551af66, type: 2}
-    - target: {fileID: 8737861540089838777, guid: a32fb17ad7dfd7b4f8b893feaf7d7512,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 151043cd92f9f3c47aa0599850a22b64, type: 2}
     m_RemovedComponents:
     - {fileID: 7238953315125949139, guid: a32fb17ad7dfd7b4f8b893feaf7d7512, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a32fb17ad7dfd7b4f8b893feaf7d7512, type: 3}

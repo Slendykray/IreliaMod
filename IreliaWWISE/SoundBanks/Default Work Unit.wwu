@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2EB6308A-69F8-47F0-9D4C-0D5F762B33BB}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{2EB6308A-69F8-47F0-9D4C-0D5F762B33BB}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="IreliaBank" ID="{7FC54C2A-D8F7-4E19-93ED-7684266E29E2}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Default Work Unit" ID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
