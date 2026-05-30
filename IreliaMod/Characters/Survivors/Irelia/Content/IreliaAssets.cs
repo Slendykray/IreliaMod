@@ -4,6 +4,8 @@ using IreliaMod.Modules;
 using System;
 using RoR2.Projectile;
 using UnityEngine.AddressableAssets;
+using IreliaMod.Survivors.Irelia.Components;
+using System.Collections.Generic;
 
 namespace IreliaMod.Survivors.Irelia
 {
@@ -33,6 +35,8 @@ namespace IreliaMod.Survivors.Irelia
         public static Material bladesDefMat;
 
         public static GameObject edgeProjectilePrefab;
+
+        public static GameObject edgeEffect;
         public static void Init(AssetBundle assetBundle)
         {
 
@@ -67,10 +71,36 @@ namespace IreliaMod.Survivors.Irelia
 
             dashEffect = _assetBundle.LoadAsset<GameObject>("Dash2");
 
-            bladesDefMat = _assetBundle.LoadAsset<Material>("BladeDefMat");
+            bladesDefMat = _assetBundle.LoadAsset<Material>("matIreliaRor");
             bladesGlowMat = _assetBundle.LoadAsset<Material>("BladeGlowfMat");
 
+
+
+
+            edgeEffect = _assetBundle.LoadAsset<GameObject>("EdgeEffect");
+            var knifeSpawn = edgeEffect.transform.Find("Irelia-Vanguard's Edge/KnifeSpawn").gameObject.AddComponent<IreliaKnifeSpawn>();
+            knifeSpawn.knifeObj = _assetBundle.LoadAsset<GameObject>("Irelia-Knife");
+            knifeSpawn.transformParent = knifeSpawn.transform.Find("Parent");
+
+            List<Transform> start = new List<Transform>();
+            List<Transform> end = new List<Transform>();
+            Transform[] AllChildren = knifeSpawn.transform.GetComponentsInChildren<Transform>();
+
+            foreach (Transform child in AllChildren)
+            {
+                if (child.name.Contains("Point"))
+                {
+                    if (child.parent.parent.name.Contains("Knife-Start") || child.parent.name.Contains("Knife-Start"))
+                        start.Add(child);
+
+                    if (child.parent.parent.name.Contains("Knife-End") || child.parent.name.Contains("Knife-End"))
+                        end.Add(child);
+                }    
+            }
+            knifeSpawn.startPoint = start.ToArray();
+            knifeSpawn.endPoint = end.ToArray();
         }
+
 
         private static void CreateBombExplosionEffect()
         {
@@ -134,13 +164,15 @@ namespace IreliaMod.Survivors.Irelia
 
             //napalm = R2API.PrefabAPI.InstantiateClone(fireEffect, "ArtilleristNapalm");
             ProjectileImpactExplosion napalmExplosion = edgeProjectilePrefab.GetComponent<ProjectileImpactExplosion>();
-            napalmExplosion.fireChildren = true;
+            //napalmExplosion.fireChildren = true;
             napalmExplosion.childrenCount = 1;
             GameObject napalmDot = R2API.PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Molotov/MolotovProjectileDotZone.prefab").WaitForCompletion(), "ArtilleristNapalmDot");
             napalmDot.transform.localScale *= 2f;
             napalmExplosion.childrenProjectilePrefab = napalmDot;
             napalmExplosion.transformSpace = ProjectileImpactExplosion.TransformSpace.Normal;
             napalmExplosion.falloffModel = BlastAttack.FalloffModel.None;
+
+            edgeProjectilePrefab.AddComponent<SpawnDiamond>();
         }
         #endregion projectiles
     }

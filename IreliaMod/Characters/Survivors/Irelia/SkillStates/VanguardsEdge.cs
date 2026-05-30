@@ -23,7 +23,6 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
         {     
       
             base.OnEnter();
-            skillLocator.primary.SetSkillOverride(base.characterBody, CharacterBody.CommonAssets.disabledSkill, GenericSkill.SkillOverridePriority.Contextual);
 
             blades = GetModelChildLocator().FindChild("Blades").gameObject;
 
@@ -92,12 +91,8 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
 
         private void HandlePrimaryAttack()
         {
-            
-            //EffectManager.SimpleMuzzleFlash(ArrowRain.muzzleFlashEffect, base.gameObject, "Muzzle", false);
-            //if (this.areaIndicatorInstance)
-            //{
-            //    ProjectileManager.instance.FireProjectile(ArrowRain.projectilePrefab, this.areaIndicatorInstance.transform.position, this.areaIndicatorInstance.transform.rotation, base.gameObject, this.damageStat * ArrowRain.damageCoefficient, 0f, Util.CheckRoll(this.critStat, base.characterBody.master), DamageColorIndex.Default, null, -1f, new DamageTypeCombo?(DamageTypeCombo.GenericSpecial));
-            //}
+
+
             Ray aimRay = base.GetAimRay();
         
 
@@ -109,7 +104,7 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
                     characterBody.damage * IreliaStaticValues.edgeDamageCoefficient,
                     0f,
                     Util.CheckRoll(characterBody.crit, characterBody.master),
-                    damageType: DamageSource.Primary
+                    damageType: DamageSource.Special
                     );
 
 
@@ -125,7 +120,6 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
         public override void OnExit()
         {
             blades.SetActive(true);
-            base.skillLocator.primary.UnsetSkillOverride(base.characterBody, CharacterBody.CommonAssets.disabledSkill, GenericSkill.SkillOverridePriority.Contextual);
 
             if (this.areaIndicatorInstance)
             {
