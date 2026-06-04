@@ -33,7 +33,7 @@ namespace IreliaMod.Survivors.Irelia
 
             string lore = "";
 
-            Language.Add(prefix + "NAME", "Irelia");
+            Language.Add(prefix + "NAME", "Bladedancer");
             Language.Add(prefix + "DESCRIPTION", desc);
             Language.Add(prefix + "SUBTITLE", "the Blade Dancer");
             Language.Add(prefix + "LORE", lore);

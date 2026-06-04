@@ -45,6 +45,11 @@ namespace IreliaMod.Survivors.Irelia
             swordHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("HenrySwordHit");
 
 
+            GameObject prefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ElitePoison/HealingDisabledEffect.prefab").WaitForCompletion();
+  
+            R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
+            R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
+
             CreateEffects();
 
             CreateProjectiles();
@@ -77,8 +82,11 @@ namespace IreliaMod.Survivors.Irelia
 
 
 
-            edgeEffect = _assetBundle.LoadAsset<GameObject>("EdgeEffect");
-            var knifeSpawn = edgeEffect.transform.Find("Irelia-Vanguard's Edge/KnifeSpawn").gameObject.AddComponent<IreliaKnifeSpawn>();
+            edgeProjectilePrefab = _assetBundle.LoadAsset<GameObject>("EdgeKnife");
+            edgeProjectilePrefab.AddComponent<SpawnDiamond>();
+
+            edgeEffect = _assetBundle.LoadAsset<GameObject>("Diamond");
+            var knifeSpawn = edgeEffect.transform.Find("EdgeEffect/Irelia-Vanguard's Edge/KnifeSpawn").gameObject.AddComponent<IreliaKnifeSpawn>();
             knifeSpawn.knifeObj = _assetBundle.LoadAsset<GameObject>("Irelia-Knife");
             knifeSpawn.transformParent = knifeSpawn.transform.Find("Parent");
 
@@ -160,19 +168,19 @@ namespace IreliaMod.Survivors.Irelia
 
 
 
-            edgeProjectilePrefab = Asset.CloneProjectilePrefab("MageFireboltBasic", "IreliaEdgeProjectile");
+            //edgeProjectilePrefab = Asset.CloneProjectilePrefab("MageFireboltBasic", "IreliaEdgeProjectile");
 
-            //napalm = R2API.PrefabAPI.InstantiateClone(fireEffect, "ArtilleristNapalm");
-            ProjectileImpactExplosion napalmExplosion = edgeProjectilePrefab.GetComponent<ProjectileImpactExplosion>();
-            //napalmExplosion.fireChildren = true;
-            napalmExplosion.childrenCount = 1;
-            GameObject napalmDot = R2API.PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Molotov/MolotovProjectileDotZone.prefab").WaitForCompletion(), "ArtilleristNapalmDot");
-            napalmDot.transform.localScale *= 2f;
-            napalmExplosion.childrenProjectilePrefab = napalmDot;
-            napalmExplosion.transformSpace = ProjectileImpactExplosion.TransformSpace.Normal;
-            napalmExplosion.falloffModel = BlastAttack.FalloffModel.None;
+            ////napalm = R2API.PrefabAPI.InstantiateClone(fireEffect, "ArtilleristNapalm");
+            //ProjectileImpactExplosion napalmExplosion = edgeProjectilePrefab.GetComponent<ProjectileImpactExplosion>();
+            ////napalmExplosion.fireChildren = true;
+            //napalmExplosion.childrenCount = 1;
+            //GameObject napalmDot = R2API.PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Molotov/MolotovProjectileDotZone.prefab").WaitForCompletion(), "ArtilleristNapalmDot");
+            //napalmDot.transform.localScale *= 2f;
+            //napalmExplosion.childrenProjectilePrefab = napalmDot;
+            //napalmExplosion.transformSpace = ProjectileImpactExplosion.TransformSpace.Normal;
+            //napalmExplosion.falloffModel = BlastAttack.FalloffModel.None;
 
-            edgeProjectilePrefab.AddComponent<SpawnDiamond>();
+            //edgeProjectilePrefab.AddComponent<SpawnDiamond>();
         }
         #endregion projectiles
     }

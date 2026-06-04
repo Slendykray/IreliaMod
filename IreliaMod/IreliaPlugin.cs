@@ -28,8 +28,8 @@ namespace IreliaMod
         // if you do not change this, you are giving permission to deprecate the mod-
         //  please change the names to your own stuff, thanks
         //   this shouldn't even have to be said
-        public const string MODUID = "com.slendykray.IreliaMod";
-        public const string MODNAME = "IreliaMod";
+        public const string MODUID = "com.slendykray.BladedancerMod";
+        public const string MODNAME = "BladedancerMod";
         public const string MODVERSION = "1.0.0";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
@@ -60,11 +60,11 @@ namespace IreliaMod
 
         void SetVFX()
         {
-            GameObject prefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ElitePoison/HealingDisabledEffect.prefab").WaitForCompletion();
+            //GameObject prefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ElitePoison/HealingDisabledEffect.prefab").WaitForCompletion();
 
-            //R2API.TempVisualEffectAPI.EffectCondition condition = body => body.healthComponent.combinedHealth < bodyInfo.damage * HenryStaticValues.dashDamageCoefficient;
-            R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
-            R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
+            ////R2API.TempVisualEffectAPI.EffectCondition condition = body => body.healthComponent.combinedHealth < bodyInfo.damage * HenryStaticValues.dashDamageCoefficient;
+            //R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
+            //R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
         }
 
         private static Hook AddBankAfterAKSoundEngineInit;

@@ -38,7 +38,7 @@ namespace IreliaMod.Survivors.Irelia
             bodyNameToken = HENRY_PREFIX + "NAME",
             subtitleNameToken = HENRY_PREFIX + "SUBTITLE",
 
-            characterPortrait = assetBundle.LoadAsset<Texture>("texHenryIcon"),
+            characterPortrait = assetBundle.LoadAsset<Texture>("texIreliaIcon"),
             bodyColor = new Color32(245, 37, 78, 255),
             sortPosition = 100,
 
@@ -368,7 +368,7 @@ namespace IreliaMod.Survivors.Irelia
             #region DefaultSkin
             //this creates a SkinDef with all default fields
             SkinDef defaultSkin = Skins.CreateSkinDef("DEFAULT_SKIN",
-                assetBundle.LoadAsset<Sprite>("texMainSkin"),
+                assetBundle.LoadAsset<Sprite>("texSkinDefault"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject);
 
