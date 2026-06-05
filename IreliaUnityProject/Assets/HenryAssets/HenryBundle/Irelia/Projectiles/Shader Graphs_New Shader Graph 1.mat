@@ -44,6 +44,7 @@ Material:
     - _BUILTIN_QueueOffset: 0
     - _Fade: 3
     m_Colors:
-    - _Color: {r: 0, g: 0.082792655, b: 1.9766746, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _Color_1: {r: 1, g: 1, b: 1, a: 0}
+    - _Emission: {r: 0, g: 0.28838864, b: 5.656854, a: 0}
   m_BuildTextureStacks: []

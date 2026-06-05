@@ -42,11 +42,16 @@ namespace IreliaMod.Survivors.Irelia
 
             _assetBundle = assetBundle;
 
+            RiskOfOptions.ModSettingsManager.SetModIcon(_assetBundle.LoadAsset<Sprite>("texIreliaIcon"));
+
+
+
             swordHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("HenrySwordHit");
+        
 
+            //GameObject prefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ElitePoison/HealingDisabledEffect.prefab").WaitForCompletion();
+            GameObject prefab = _assetBundle.LoadAsset<GameObject>("ExecutionMark");
 
-            GameObject prefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ElitePoison/HealingDisabledEffect.prefab").WaitForCompletion();
-  
             R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
             R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
 

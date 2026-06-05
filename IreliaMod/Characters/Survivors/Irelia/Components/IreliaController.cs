@@ -96,10 +96,13 @@ namespace IreliaMod.Survivors.Irelia.Components
                     if (body.healthComponent.combinedHealth < characterBody.damage * IreliaStaticValues.dashDamageCoefficient)
                     {
                         //targetList.Add(hurtbox);
-                        if (!body.HasBuff(IreliaBuffs.executionBuff))
-                        {
-                            body.AddBuff(IreliaBuffs.executionBuff);
-                        }
+
+                        body.AddTimedBuff(IreliaBuffs.executionBuff, 5f);
+
+                        //if (!body.HasBuff(IreliaBuffs.executionBuff))
+                        //{
+                        //    body.AddBuff(IreliaBuffs.executionBuff);
+                        //}
                     }
                     else
                     {

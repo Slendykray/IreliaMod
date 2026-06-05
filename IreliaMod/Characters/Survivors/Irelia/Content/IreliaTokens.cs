@@ -56,7 +56,7 @@ namespace IreliaMod.Survivors.Irelia
 
             #region Secondary
             Language.Add(prefix + "SECONDARY_DASH_NAME", "Bladesurge");
-            Language.Add(prefix + "SECONDARY_DASH_DESCRIPTION", Tokens.agilePrefix + $"Dash forward, for {Tokens.DamageValueText(IreliaStaticValues.dashDamageCoefficient)}. Hitting enemy lowers Special cooldown by 1s, up to 3s. {Tokens.UtilityText("Eliminations reset the dash")}. Enemies are marked when within execution threshold.");
+            Language.Add(prefix + "SECONDARY_DASH_DESCRIPTION", Tokens.agilePrefix + $"Dash forward, for {Tokens.DamageValueText(IreliaStaticValues.dashDamageCoefficient)}. Hitting enemy {Tokens.UtilityText("lowers Special cooldown by 1s, up to 3s")}. Eliminations {Tokens.UtilityText("reset the dash")}. Enemies are {Tokens.UtilityText("marked")} when within execution threshold.");
             #endregion
 
             #region Utility

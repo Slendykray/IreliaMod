@@ -56,7 +56,7 @@ MonoBehaviour:
   spawnEffect: {fileID: 0}
   lifetime: 10
   lifetimeExpiredEffect: {fileID: 0}
-  desiredForwardSpeed: 100
+  desiredForwardSpeed: 120
   updateAfterFiring: 0
   enableVelocityOverLifetime: 0
   velocityOverLifetime:
