@@ -28,8 +28,11 @@ namespace IreliaMod.Survivors.Irelia
 
             string desc = "";
 
-            string outro = "..and so he left, searching for a new identity.";
-            string outroFailure = "..and so he vanished, forever a blank slate.";
+            //string outro = "..and so she left, searching for a new identity.";
+            //string outroFailure = "..and so he vanished, forever a blank slate.";
+
+            string outro = "..femboys.";
+            string outroFailure = "..tomboys.";
 
             string lore = "";
 
@@ -45,7 +48,7 @@ namespace IreliaMod.Survivors.Irelia
             #endregion
 
             #region Passive
-            Language.Add(prefix + "PASSIVE_NAME", "Irelia passive");
+            Language.Add(prefix + "PASSIVE_NAME", "Bladedancer passive");
             Language.Add(prefix + "PASSIVE_DESCRIPTION", "Every fourth attack becomes a quick double attack.");
             #endregion
 

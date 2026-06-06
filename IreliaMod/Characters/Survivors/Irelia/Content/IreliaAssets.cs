@@ -57,7 +57,7 @@ namespace IreliaMod.Survivors.Irelia
 
             CreateEffects();
 
-            CreateProjectiles();
+            //CreateProjectiles();
         }
 
         #region effects
@@ -170,22 +170,6 @@ namespace IreliaMod.Survivors.Irelia
                 bombController.ghostPrefab = _assetBundle.CreateProjectileGhostPrefab("HenryBombGhost");
             
             bombController.startSound = "";
-
-
-
-            //edgeProjectilePrefab = Asset.CloneProjectilePrefab("MageFireboltBasic", "IreliaEdgeProjectile");
-
-            ////napalm = R2API.PrefabAPI.InstantiateClone(fireEffect, "ArtilleristNapalm");
-            //ProjectileImpactExplosion napalmExplosion = edgeProjectilePrefab.GetComponent<ProjectileImpactExplosion>();
-            ////napalmExplosion.fireChildren = true;
-            //napalmExplosion.childrenCount = 1;
-            //GameObject napalmDot = R2API.PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Molotov/MolotovProjectileDotZone.prefab").WaitForCompletion(), "ArtilleristNapalmDot");
-            //napalmDot.transform.localScale *= 2f;
-            //napalmExplosion.childrenProjectilePrefab = napalmDot;
-            //napalmExplosion.transformSpace = ProjectileImpactExplosion.TransformSpace.Normal;
-            //napalmExplosion.falloffModel = BlastAttack.FalloffModel.None;
-
-            //edgeProjectilePrefab.AddComponent<SpawnDiamond>();
         }
         #endregion projectiles
     }
