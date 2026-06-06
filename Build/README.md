@@ -6,10 +6,10 @@ based of Irelia from LoL
 
 you can change voicelines volume in game settings
 
-missing some assets
+missing some anims
 
 # Skills
-[![](https://github.com/Slendykray/BladedancerMod/blob/main/Images/skills.png?raw=true)](https://github.com/Slendykray/BladedancerMod/blob/main/Images/skills.png?raw=true)
+[![](https://github.com/Slendykray/IreliaMod/blob/main/Images/skills.png?raw=true)](https://github.com/Slendykray/IreliaMod/blob/main/Images/skills.png?raw=true)
 
 # Credits
 - Slendykray - coding/unity
