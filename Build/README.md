@@ -2,11 +2,9 @@
 
 Thanks kdadrew for commissioning!
 
-based of Irelia from LoL
+Based of Irelia from LoL.
 
-you can change voicelines volume in game settings
-
-missing some anims
+You can change voicelines volume in game settings.
 
 # Skills
 [![](https://github.com/Slendykray/IreliaMod/blob/main/Images/skills.png?raw=true)](https://github.com/Slendykray/IreliaMod/blob/main/Images/skills.png?raw=true)

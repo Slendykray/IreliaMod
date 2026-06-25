@@ -11,15 +11,16 @@ using UnityEngine.Networking;
 
 namespace IreliaMod.Survivors.Irelia.SkillStates
 {
-    public class Shield : BaseTimedSkillState
+    public class Shield : BaseSkillState
     {
 
-        public override float TimedBaseDuration => 3f;
-        public override float TimedBaseCastStartPercentTime => 1f;
+        //public override float TimedBaseDuration => 3f;
+        //public override float TimedBaseCastStartPercentTime => 1f;
+        private bool _heldTooLongYaDoofus;
+        private bool _inputDown;
 
 
-
-        //private float duration = 3f;
+        private float duration = 3f;
 
         private float slamRadius = 25f;
 
@@ -37,8 +38,6 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
 
             characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, duration);
 
-            //PlayAnimation("FullBody, Override", "Special", "Special.playbackRate", duration);
-
             PlayCrossfade("FullBody, Override", "Special", "Special.playbackRate", duration, 0.05f);
 
             blades = GetModelChildLocator().FindChild("Blades").gameObject;
@@ -48,28 +47,40 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
             Util.PlaySound("Play_SpecialCharge", gameObject);
         }
 
-        protected override void InitDurationValues()
-        {
-            //duration = TimedBaseDuration / attackSpeedStat;
-            duration = TimedBaseDuration;
-            this.castStartTime = TimedBaseCastStartPercentTime * duration;
-            this.castEndTime = TimedBaseCastEndPercentTime * duration;
-        }
+        //protected override void InitDurationValues()
+        //{
+        //    //duration = TimedBaseDuration / attackSpeedStat;
+        //    duration = TimedBaseDuration;
+        //    this.castStartTime = TimedBaseCastStartPercentTime * duration;
+        //    this.castEndTime = TimedBaseCastEndPercentTime * duration;
+        //}
 
-        protected override void OnCastEnter()
-        {
-            Fire();
-        }
+        //protected override void OnCastEnter()
+        //{
+        //    Fire();
+        //}
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
 
+            if (_heldTooLongYaDoofus && isAuthority && base.inputBank.skill4.justReleased)
+            {
+                _heldTooLongYaDoofus = false;
+            }
+            if (!_heldTooLongYaDoofus && isAuthority && base.inputBank.skill4.justPressed)
+            {
+                _inputDown = true;
+            }
+
+            if (isAuthority && inputBank.skill4.justReleased && _inputDown)
+            {
+                this.outer.SetNextStateToMain();
+            }
 
             if (isAuthority && fixedAge >= duration)
             {
                 outer.SetNextStateToMain();
-                return;
             }
         }
 
@@ -100,11 +111,11 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
                 homing.pos = hurtbox.healthComponent.body.corePosition;
                 //homing.pos = hurtbox.transform.position;
                 UnityEngine.Object.Destroy(blade, 0.5f);
-                
 
+                float num = fixedAge / duration;
 
                 DamageInfo damageInfo = new DamageInfo();
-                damageInfo.damage = this.damageStat * IreliaStaticValues.shieldDamageCoefficient;
+                damageInfo.damage = this.damageStat * (IreliaStaticValues.shieldDamageCoefficient * num);
                 damageInfo.attacker = base.gameObject;
                 damageInfo.inflictor = base.gameObject;
                 damageInfo.force = Vector3.zero;
@@ -143,9 +154,17 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
 
         public override void OnExit()
         {
-            PlayCrossfade("Gesture, Override", "SpecialRecover", "Special.playbackRate", duration, 0.05f);
-            //PlayAnimation("Gesture, Override", "SpecialRecover", "Special.playbackRate", duration);
+            Fire();
 
+
+            PlayAnimation("FullBody, Override", "BufferEmpty", "", duration);
+
+            PlayCrossfade("Gesture, Override", "SpecialRecover", "Special.playbackRate", duration, 0.05f);
+
+
+           
+
+                
             blades.SetActive(true);
 
             if (this.slamIndicatorInstance) UnityEngine.Object.Destroy(this.slamIndicatorInstance.gameObject, 0.5f);

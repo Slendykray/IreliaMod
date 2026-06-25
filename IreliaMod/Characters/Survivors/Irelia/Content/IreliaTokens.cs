@@ -26,13 +26,17 @@ namespace IreliaMod.Survivors.Irelia
             // + "< ! > Roll has a lingering armor buff that helps to use it aggressively." + Environment.NewLine + Environment.NewLine
             // + "< ! > Bomb can be used to wipe crowds with ease." + Environment.NewLine + Environment.NewLine;
 
-            string desc = "";
+            string desc = "Trained in the ancient dances of her province, Irelia has adapted her art for war, using the graceful and carefully practiced movements to levitate a host of deadly blades.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine
+             + "< ! > Bladesurge may help give you that extra reach for floating enemies." + Environment.NewLine + Environment.NewLine
+             + "< ! > Vanguard's Edge can stun entire areas, but is also a great tool for digging yourself out of a pit of enemies." + Environment.NewLine + Environment.NewLine
+             + "< ! > You may be invulnerable during Defiant Dance, but you are also stationary. Think carefully about your positioning." + Environment.NewLine + Environment.NewLine
+             + "< ! > Never stop learning. There's always a form you don't know." + Environment.NewLine + Environment.NewLine;
 
-            //string outro = "..and so she left, searching for a new identity.";
+            //string outro = "..and so he left, searching for a new identity.";
             //string outroFailure = "..and so he vanished, forever a blank slate.";
 
-            string outro = "..femboys.";
-            string outroFailure = "..tomboys.";
+            string outro = "I really should’ve stretched first… Oh well!";
+            string outroFailure = "O-ma?…";
 
             string lore = "";
 
@@ -53,7 +57,7 @@ namespace IreliaMod.Survivors.Irelia
             #endregion
 
             #region Primary
-            Language.Add(prefix + "PRIMARY_SLASH_NAME", "Slash");
+            Language.Add(prefix + "PRIMARY_SLASH_NAME", "Adapted Cut");
             Language.Add(prefix + "PRIMARY_SLASH_DESCRIPTION", Tokens.agilePrefix + $"Attack with 6 blades, for {Tokens.DamageValueText(IreliaStaticValues.swordDamageCoefficient)}. Attacking repeatedly {Tokens.UtilityText("increases attack speed")} by {Tokens.UtilityText(SkillStates.SlashCombo.buffCoefficient * 100f + "%")} for {Tokens.UtilityText(SkillStates.SlashCombo.buffDur + " seconds")}.");
             #endregion
 
@@ -69,7 +73,7 @@ namespace IreliaMod.Survivors.Irelia
 
             #region Special
             Language.Add(prefix + "SPECIAL_SHIELD_NAME", "Defiant Dance");
-            Language.Add(prefix + "SPECIAL_SHIELD_DESCRIPTION", Tokens.StunningPrefix() + $"Form a defensive barrier of blades that makes you {Tokens.UtilityText("invulnerable")}. After {Tokens.UtilityText("3 seconds")}, the blades explode for {Tokens.DamageValueText(IreliaStaticValues.shieldDamageCoefficient)}.");
+            Language.Add(prefix + "SPECIAL_SHIELD_DESCRIPTION", Tokens.StunningPrefix() + $"Form a defensive barrier of blades that makes you {Tokens.UtilityText("invulnerable")}. After {Tokens.UtilityText("3 seconds")}, the blades explode for up to {Tokens.DamageValueText(IreliaStaticValues.shieldDamageCoefficient)}. {Tokens.UtilityText("Press again to explode early")}.");
             #endregion
 
             #region Achievements
