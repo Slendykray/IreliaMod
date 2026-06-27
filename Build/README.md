@@ -2,6 +2,8 @@
 
 Thanks kdadrew for commissioning!
 
+Multiplayer compatible!
+
 Based of Irelia from LoL.
 
 You can change voicelines volume in game settings.

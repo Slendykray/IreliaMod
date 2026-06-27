@@ -59,11 +59,19 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
                 base.characterDirection.moveVector = base.GetAimRay().direction;
             }
 
-            base.characterMotor.velocity = Vector3.zero;
-
-            if (base.fixedAge >= this.maxDuration || base.inputBank.skill1.justPressed || base.inputBank.skill3.justPressed)
+            if (base.characterMotor)
             {
-                this.HandlePrimaryAttack();
+                base.characterMotor.velocity = Vector3.zero;
+            }        
+
+            if (base.isAuthority && base.inputBank)
+            {
+                if (base.fixedAge >= this.maxDuration || base.inputBank.skill1.justPressed || base.inputBank.skill3.justPressed)
+                {
+                    //this.HandlePrimaryAttack();
+
+                    base.outer.SetNextStateToMain();
+                }
             }
         }
 
@@ -91,12 +99,11 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
 
         private void HandlePrimaryAttack()
         {
+            if (isAuthority)
+            {
+                Ray aimRay = base.GetAimRay();
 
-
-            Ray aimRay = base.GetAimRay();
-        
-
-            ProjectileManager.instance.FireProjectile(
+                ProjectileManager.instance.FireProjectile(
                     IreliaAssets.edgeProjectilePrefab,
                     aimRay.origin,
                     Util.QuaternionSafeLookRotation(aimRay.direction),
@@ -105,20 +112,22 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
                     0f,
                     Util.CheckRoll(characterBody.crit, characterBody.master),
                     damageType: DamageSource.Special
-                    );
+                );
+            }
+             
 
-
-            PlayCrossfade("FullBody, Override", "UtilityRecover", "Special.playbackRate", 1f, 0.05f);
-
-            Util.PlaySound("Play_UtilityImpact", base.gameObject);
-
-            outer.SetNextStateToMain();
-
+ 
         }
 
 
         public override void OnExit()
         {
+            HandlePrimaryAttack();
+
+            PlayCrossfade("FullBody, Override", "UtilityRecover", "Special.playbackRate", 1f, 0.05f);
+
+            Util.PlaySound("Play_UtilityImpact", base.gameObject);
+
             blades.SetActive(true);
 
             if (this.areaIndicatorInstance)

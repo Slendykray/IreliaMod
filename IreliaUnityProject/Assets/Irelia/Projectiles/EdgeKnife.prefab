@@ -225,9 +225,10 @@ MonoBehaviour:
   preserveExplosionOrientation: 0
   explosionSoundString: 
   fireChildren: 0
-  childrenProjectilePrefab: {fileID: 0}
+  childrenProjectilePrefab: {fileID: 155824727581260961, guid: 70adb2c73e89c80478e2f2a31d0990b6,
+    type: 3}
   childrenCount: 1
-  childrenDamageCoefficient: 0.1
+  childrenDamageCoefficient: 0.3
   childrenInheritDamageType: 0
   minAngleOffset: {x: 0, y: 0, z: 0}
   maxAngleOffset: {x: 0, y: 0, z: 0}
@@ -238,7 +239,7 @@ MonoBehaviour:
   minYawDegrees: 0
   rangeYawDegrees: 0
   useLocalSpaceForChildren: 1
-  useChildRotation: 0
+  useChildRotation: 1
   applyDot: 0
   dotIndex: 1
   dotDuration: 0

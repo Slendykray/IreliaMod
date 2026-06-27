@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace IreliaMod.Survivors.Irelia.Components
 {
@@ -97,8 +98,13 @@ namespace IreliaMod.Survivors.Irelia.Components
                     {
                         //targetList.Add(hurtbox);
 
-                        body.AddTimedBuff(IreliaBuffs.executionBuff, 5f);
-
+                        if (NetworkServer.active)
+                        {
+                            body.AddTimedBuff(IreliaBuffs.executionBuff, 5f);
+                        }
+                         
+                     
+                           
                         //if (!body.HasBuff(IreliaBuffs.executionBuff))
                         //{
                         //    body.AddBuff(IreliaBuffs.executionBuff);
@@ -106,7 +112,7 @@ namespace IreliaMod.Survivors.Irelia.Components
                     }
                     else
                     {
-                        if (body.HasBuff(IreliaBuffs.executionBuff))
+                        if (body.HasBuff(IreliaBuffs.executionBuff) && NetworkServer.active)
                         {
                             body.RemoveBuff(IreliaBuffs.executionBuff);
                         }

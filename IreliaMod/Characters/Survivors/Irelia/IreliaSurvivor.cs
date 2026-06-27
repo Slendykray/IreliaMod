@@ -373,13 +373,12 @@ namespace IreliaMod.Survivors.Irelia
                 prefabCharacterModel.gameObject);
 
             //these are your Mesh Replacements. The order here is based on your CustomRendererInfos from earlier
-                //pass in meshes as they are named in your assetbundle
+            //pass in meshes as they are named in your assetbundle
             //currently not needed as with only 1 skin they will simply take the default meshes
-                //uncomment this when you have another skin
+            //uncomment this when you have another skin
             //defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshHenrySword",
-            //    "meshHenryGun",
-            //    "meshHenry");
+            //    "meshIrelia",
+            //    "meshBlade");
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
@@ -387,28 +386,26 @@ namespace IreliaMod.Survivors.Irelia
 
             //uncomment this when you have a mastery skin
             #region MasterySkin
-            
-            ////creating a new skindef as we did before
+
+            //////creating a new skindef as we did before
             //SkinDef masterySkin = Modules.Skins.CreateSkinDef(HENRY_PREFIX + "MASTERY_SKIN_NAME",
             //    assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
             //    defaultRendererinfos,
             //    prefabCharacterModel.gameObject,
-            //    HenryUnlockables.masterySkinUnlockableDef);
+            //    null);
 
-            ////adding the mesh replacements as above. 
-            ////if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
+            //////adding the mesh replacements as above. 
+            //////if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
             //masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshHenrySwordAlt",
-            //    null,//no gun mesh replacement. use same gun mesh
-            //    "meshHenryAlt");
+            //    "meshIreliaWanderer",
+            //    null);
 
-            ////masterySkin has a new set of RendererInfos (based on default rendererinfos)
-            ////you can simply access the RendererInfos' materials and set them to the new materials for your skin.
-            //masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
-            //masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
-            //masterySkin.rendererInfos[2].defaultMaterial = assetBundle.LoadMaterial("matHenryAlt");
+            //////masterySkin has a new set of RendererInfos (based on default rendererinfos)
+            //////you can simply access the RendererInfos' materials and set them to the new materials for your skin.
+            //masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matIreliaWanderer");
+            //masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matBlade");
 
-            ////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
+            //////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
             //masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
             //{
             //    new SkinDef.GameObjectActivation
@@ -420,7 +417,7 @@ namespace IreliaMod.Survivors.Irelia
             ////simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
 
             //skins.Add(masterySkin);
-            
+
             #endregion
 
             skinController.skins = skins.ToArray();

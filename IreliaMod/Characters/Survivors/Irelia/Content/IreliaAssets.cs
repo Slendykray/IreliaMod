@@ -6,6 +6,7 @@ using RoR2.Projectile;
 using UnityEngine.AddressableAssets;
 using IreliaMod.Survivors.Irelia.Components;
 using System.Collections.Generic;
+using R2API;
 
 namespace IreliaMod.Survivors.Irelia
 {
@@ -49,7 +50,6 @@ namespace IreliaMod.Survivors.Irelia
             swordHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("HenrySwordHit");
         
 
-            //GameObject prefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ElitePoison/HealingDisabledEffect.prefab").WaitForCompletion();
             GameObject prefab = _assetBundle.LoadAsset<GameObject>("ExecutionMark");
 
             R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
@@ -57,7 +57,7 @@ namespace IreliaMod.Survivors.Irelia
 
             CreateEffects();
 
-            //CreateProjectiles();
+            CreateProjectiles();
         }
 
         #region effects
@@ -65,16 +65,9 @@ namespace IreliaMod.Survivors.Irelia
         {
             CreateBombExplosionEffect();
 
-            //swordSwingEffect = _assetBundle.LoadEffect("HenrySwordSwingEffect", true);
-            //swordHitImpactEffect = _assetBundle.LoadEffect("ImpactHenrySlash");
-
-            //swordSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", parentToTransform: true, soundName: "HenrySwordHit");
-
             swordSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", true);
             swordHitImpactEffect = _assetBundle.LoadEffect("IreliaHit");
 
-            //bladeSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", true);
-            //bladeHitImpactEffect = _assetBundle.LoadEffect("IreliaHit");
 
             shieldEffect = _assetBundle.LoadAsset<GameObject>("Shield2");
             bladeVFX = _assetBundle.LoadAsset<GameObject>("BladeVFX");
@@ -89,6 +82,7 @@ namespace IreliaMod.Survivors.Irelia
 
             edgeProjectilePrefab = _assetBundle.LoadAsset<GameObject>("EdgeKnife");
             edgeProjectilePrefab.AddComponent<SpawnDiamond>();
+
 
             edgeEffect = _assetBundle.LoadAsset<GameObject>("Diamond");
             var knifeSpawn = edgeEffect.transform.Find("EdgeEffect/Irelia-Vanguard's Edge/KnifeSpawn").gameObject.AddComponent<IreliaKnifeSpawn>();
@@ -112,6 +106,13 @@ namespace IreliaMod.Survivors.Irelia
             }
             knifeSpawn.startPoint = start.ToArray();
             knifeSpawn.endPoint = end.ToArray();
+
+
+            PrefabAPI.RegisterNetworkPrefab(edgeProjectilePrefab);
+            Content.AddProjectilePrefab(edgeProjectilePrefab);
+
+            PrefabAPI.RegisterNetworkPrefab(edgeEffect);
+            Content.AddProjectilePrefab(edgeEffect);
         }
 
 
@@ -141,8 +142,9 @@ namespace IreliaMod.Survivors.Irelia
         #region projectiles
         private static void CreateProjectiles()
         {
-            CreateBombProjectile();
-            Content.AddProjectilePrefab(bombProjectilePrefab);
+          
+            //CreateBombProjectile();
+            //Content.AddProjectilePrefab(bombProjectilePrefab);
         }
 
         private static void CreateBombProjectile()
