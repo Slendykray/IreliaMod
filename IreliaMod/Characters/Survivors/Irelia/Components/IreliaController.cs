@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
+//using ShaderSwapper;
+
 namespace IreliaMod.Survivors.Irelia.Components
 {
     internal class IreliaController : MonoBehaviour
@@ -33,6 +35,33 @@ namespace IreliaMod.Survivors.Irelia.Components
             sk = GetChildLocator().FindChild("Blades").GetComponent<SkinnedMeshRenderer>();
         }
 
+        public IreliaAssets.Skins skinType = IreliaAssets.Skins.Default;
+
+        private void Start()
+        {
+            //IreliaAssets._assetBundle.UpgradeStubbedShadersAsync();
+
+
+            ModelLocator modelLocator = characterBody.GetComponent<ModelLocator>();
+            if (modelLocator && modelLocator.modelTransform)
+            {
+                ModelSkinController skinController = modelLocator.modelTransform.GetComponent<ModelSkinController>();
+                if (skinController)
+                {
+                    uint currentSkinIndex = characterBody.skinIndex;
+
+                    SkinDef currentSkinDef = skinController.skins[currentSkinIndex];
+
+                    if (currentSkinDef.nameToken == IreliaSurvivor.HENRY_PREFIX + "GUARDIAN_SKIN_NAME")
+                    {
+                        skinType = IreliaAssets.Skins.Guardian;
+                    }
+                }
+            }
+
+            IreliaAssets.SetEffects(skinType, gameObject);
+        }
+
         ChildLocator GetChildLocator()
         {
             var body = GetComponent<CharacterBody>();
@@ -59,14 +88,14 @@ namespace IreliaMod.Survivors.Irelia.Components
                 SearchTargets();
             }
 
-            if (attackNum == 3)
-            {
-                sk.material = IreliaAssets.bladesGlowMat;
-            }
-            else
-            {
-                sk.material = IreliaAssets.bladesDefMat;
-            }
+            //if (attackNum == 3)
+            //{
+            //    sk.material = IreliaAssets.bladesGlowMat;
+            //}
+            //else
+            //{
+            //    sk.material = IreliaAssets.bladesDefMat;
+            //}
         }
 
         private  void SearchTargets()
@@ -94,28 +123,51 @@ namespace IreliaMod.Survivors.Irelia.Components
                 if (body)
                 {
 
-                    if (body.healthComponent.combinedHealth < characterBody.damage * IreliaStaticValues.dashDamageCoefficient)
+                    if (body.healthComponent.combinedHealth <= characterBody.damage * IreliaStaticValues.dashDamageCoefficient)
                     {
-                        //targetList.Add(hurtbox);
+                        //body.AddTimedBuff(IreliaBuffs.executionBuff, 5f);
+
+                        //body.AddBuff(IreliaBuffs.executionBuff);
 
                         if (NetworkServer.active)
                         {
-                            body.AddTimedBuff(IreliaBuffs.executionBuff, 5f);
+
+
+
+
+                            if (!body.gameObject.GetComponent<ExecutionMarkTracker>())
+                            {
+                                var tracker = body.gameObject.AddComponent<ExecutionMarkTracker>();
+                                //tracker.skin = skinType;
+                            }
+                            else
+                            {
+                                var tracker = body.gameObject.GetComponent<ExecutionMarkTracker>();
+                                tracker.stopwatch = 0f;
+                            }
+
                         }
-                         
-                     
-                           
-                        //if (!body.HasBuff(IreliaBuffs.executionBuff))
-                        //{
-                        //    body.AddBuff(IreliaBuffs.executionBuff);
-                        //}
+
+
                     }
                     else
                     {
-                        if (body.HasBuff(IreliaBuffs.executionBuff) && NetworkServer.active)
+                        //if (NetworkServer.active)
+                        //{
+                         
+                        //}
+
+                        //if (body.HasBuff(IreliaBuffs.executionBuff))
+                        //{
+                        //    body.RemoveBuff(IreliaBuffs.executionBuff);
+                        //}
+
+                        if (body.gameObject.GetComponent<ExecutionMarkTracker>())
                         {
-                            body.RemoveBuff(IreliaBuffs.executionBuff);
+                            var tracker = body.gameObject.GetComponent<ExecutionMarkTracker>();
+                            Destroy(tracker);
                         }
+
                     }
                 }
             }    

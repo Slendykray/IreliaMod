@@ -1,9 +1,14 @@
 Event	ID	Name			Wwise Object Path	Notes
 	40516875	Play_MenuSelect			\Default Work Unit\Play_MenuSelect	
 	143413728	Play_IntoUtility			\Default Work Unit\Play_IntoUtility	
+	191890797	Play_TakingBundleofFireworks			\Default Work Unit\Play_TakingBundleofFireworks	
 	345818273	Play_Random_Clear			\Default Work Unit\Play_Random_Clear	
 	777342324	Play_Random_Primary			\Default Work Unit\Play_Random_Primary	
+	1083893302	Play_TakingCrowbar			\Default Work Unit\Play_TakingCrowbar	
 	1172822028	Play_Death			\Default Work Unit\Play_Death	
+	1345661927	Play_Obliterate			\Default Work Unit\Play_Obliterate	
+	1678114868	Play_VoidlingKill			\Default Work Unit\Play_VoidlingKill	
+	1688868325	Play_TakingHardlightAferburner			\Default Work Unit\Play_TakingHardlightAferburner	
 	1733778635	Play_SpecialCharge			\Default Work Unit\Play_SpecialCharge	
 	1912845862	Play_FirstLevelStart			\Default Work Unit\Play_FirstLevelStart	
 	2647463512	Play_UtilityImpact			\Default Work Unit\Play_UtilityImpact	
@@ -14,29 +19,59 @@ Event	ID	Name			Wwise Object Path	Notes
 	3992142222	Play_Random_Dash			\Default Work Unit\Play_Random_Dash	
 	4060337257	Play_MithrixKill			\Default Work Unit\Play_MithrixKill	
 
+Switch Group	ID	Name			Wwise Object Path	Notes
+	128911350	IreliaSkin			\Default Work Unit\IreliaSkin	
+
+Switch	ID	Name	Switch Group			Notes
+	84881332	Guardian	IreliaSkin			
+	782826392	Default	IreliaSkin			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3252579413	Volume_Irelia_Voice			\Default Work Unit\Volume_Irelia_Voice	
 	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	49884936	Clear1	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Clear1_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Random_Clear\Clear1		42178
-	247979181	UtilityImpact	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\UtilityImpact_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\UtilityImpact		74138
-	255415109	Primary1	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary1_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Random_Primary\Primary1		9776
-	256846165	Death	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Death_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Death		23358
-	266311733	SpecialCharge	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\SpecialCharge_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\SpecialCharge		46672
-	315400640	Primary3	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary3_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Random_Primary\Primary3		10207
+	26227508	Defeating Voidling_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Defeating Voidling_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Defeating Voidling_Guardian		22224
+	36107014	FirstLevelStart_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\FirstLevelStart_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\FirstLevelSwitch\FirstLevelStart_Guardian		51330
+	49884936	Clear1	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Clear1_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Clear_Switch\Random_Clear\Clear1		42178
+	65817941	Pickingup BundleofFireworks_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Pickingup BundleofFireworks_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Pickingup BundleofFireworks_Guardian		31614
+	72878538	MithrixDefeat_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\MithrixDefeat_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\MithrixKill_Switch\MithrixDefeat_Guardian		30984
+	127243950	SpecialCharge_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\SpecialCharge_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\SpecialCharge_Switch\SpecialCharge_Guardian		65647
+	184578513	Primary3_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary3_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary_Guardian\Primary3_Guardian		26881
+	194762955	Pickingup Crowbar_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Pickingup Crowbar_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Pickingup Crowbar_Guardian		32635
+	201648554	Clear3_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Clear3_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Clear_Switch\Random_Clear_Guardian\Clear3_Guardian		20777
+	247979181	UtilityImpact	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\UtilityImpact_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\UtilityImpact_Switch\UtilityImpact		74138
+	255415109	Primary1	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary1_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary\Primary1		9776
+	256846165	Death	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Death_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Death_Switch\Death		23358
+	266311733	SpecialCharge	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\SpecialCharge_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\SpecialCharge_Switch\SpecialCharge		46672
+	315400640	Primary3	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary3_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary\Primary3		10207
 	372938331	TakingCeremonialDagger	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\TakingCeremonialDagger_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\TakeItem\TakingCeremonialDagger		30719
-	663448044	Dash1	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Dash1_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Random_Dash\Dash1		9930
+	379277422	UtilityImpact_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\UtilityImpact_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\UtilityImpact_Switch\UtilityImpact_Guardian		66264
+	464664672	Primary2_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary2_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary_Guardian\Primary2_Guardian		28849
+	479427381	Primary1_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary1_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary_Guardian\Primary1_Guardian		24467
+	497015466	Clear2_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Clear2_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Clear_Switch\Random_Clear_Guardian\Clear2_Guardian		24345
+	663448044	Dash1	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Dash1_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Dash_Switch\Random_Dash\Dash1		9930
+	667776449	Pickingup Hardlight Aferburner_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Pickingup Hardlight Aferburner_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Pickingup Hardlight Aferburner_Guardian		16045
+	709750450	Obliteration_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Obliteration_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Obliteration_Guardian		18557
+	714844252	Primary4_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary4_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary_Guardian\Primary4_Guardian		27619
+	725121702	IntoUtility_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\IntoUtility_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\IntoUtility_Switch\IntoUtility_Guardian		17233
 	728914966	TakingTriTippedDagger	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\TakingTriTippedDagger_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\TakeItem\TakingTriTippedDagger		33436
-	765247232	Primary5	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary5_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Random_Primary\Primary5		8502
-	773608577	SpecialProjectilePop	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\SpecialProjectilePop_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\SpecialProjectilePop		13711
-	813527898	Dash2	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Dash2_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Random_Dash\Dash2		15684
-	824973440	MithrixKill	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\MithrixKill_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\MithrixKill		39609
-	891034906	IntoUtility	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\IntoUtility_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\IntoUtility		13171
+	731906117	Clear1_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Clear1_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Clear_Switch\Random_Clear_Guardian\Clear1_Guardian		30848
+	765247232	Primary5	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary5_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary\Primary5		8502
+	773608577	SpecialProjectilePop	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\SpecialProjectilePop_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\SpecialPop_Switch\SpecialProjectilePop		13711
+	781131077	SpecialImpact_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\SpecialImpact_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\SpecialPop_Switch\SpecialImpact_Guardian		32675
+	806194656	Primary5_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary5_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary_Guardian\Primary5_Guardian		23142
+	813527898	Dash2	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Dash2_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Dash_Switch\Random_Dash\Dash2		15684
+	824973440	MithrixKill	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\MithrixKill_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\MithrixKill_Switch\MithrixKill		39609
+	884784154	MenuSelect_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\MenuSelect_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\MenuSelect_Switch\MenuSelect_Guardian		27289
+	891034906	IntoUtility	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\IntoUtility_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\IntoUtility_Switch\IntoUtility		13171
 	936145382	TakeFrostRelic	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\TakeFrostRelic_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\TakeItem\TakeFrostRelic		26565
-	960584940	Primary4	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary4_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Random_Primary\Primary4		10997
-	1008262305	Primary2	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary2_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Random_Primary\Primary2		11947
-	1029006959	Clear2	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Clear2_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Random_Clear\Clear2		14748
-	1068846924	MenuSelect	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\MenuSelect_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\MenuSelect		13448
-	1068996500	FirstLevelStart	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\FirstLevelStart_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\FirstLevelStart		53020
+	936146868	Death_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Death_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Death_Switch\Death_Guardian		30607
+	960584940	Primary4	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary4_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary\Primary4		10997
+	996652225	Dash2_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Dash2_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Dash_Switch\Random_Dash_Guardian\Dash2_Guardian		30325
+	1008262305	Primary2	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Primary2_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Primary_Switch\Random_Primary\Primary2		11947
+	1010782665	Dash1_Guardian	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Dash1_Guardian_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Dash_Switch\Random_Dash_Guardian\Dash1_Guardian		30175
+	1029006959	Clear2	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\Clear2_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\Clear_Switch\Random_Clear\Clear2		14748
+	1068846924	MenuSelect	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\MenuSelect_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\MenuSelect_Switch\MenuSelect		13448
+	1068996500	FirstLevelStart	C:\Users\Slendykray\Documents\GitHub\IreliaMod\IreliaWWISE\.cache\Windows\SFX\FirstLevelStart_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\Voice\FirstLevelSwitch\FirstLevelStart		53020
 

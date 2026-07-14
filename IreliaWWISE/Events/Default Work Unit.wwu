@@ -8,7 +8,7 @@
 						<Action Name="" ID="{001E95B9-D5B1-4AE0-BA85-A1B16D6AB5C8}" ShortID="923303708">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Random_Primary" ID="{0A74E639-D431-4047-990E-76E629838B7C}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="Primary_Switch" ID="{583E92FA-E7F8-4283-B80B-576637C80CA4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -19,7 +19,7 @@
 						<Action Name="" ID="{79F4E6FD-46DA-4F87-A774-7B32B2621A22}" ShortID="686964929">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Random_Dash" ID="{72A3B655-2BA3-4E72-BC17-BF4B5D5C70D4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="Dash_Switch" ID="{994A513E-A297-401D-B06F-A022F8355D0D}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -30,7 +30,7 @@
 						<Action Name="" ID="{630470CC-16E4-42C2-B496-453C485B36E8}" ShortID="398796583">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SpecialCharge" ID="{DC283092-1257-463B-82D8-C558E74B9EE4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="SpecialCharge_Switch" ID="{B2EFF105-997C-4ED4-BE1E-86EE67BCBEC4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -44,14 +44,14 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SpecialCharge" ID="{DC283092-1257-463B-82D8-C558E74B9EE4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="SpecialCharge_Switch" ID="{B2EFF105-997C-4ED4-BE1E-86EE67BCBEC4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{B8A2713A-F407-431B-BA74-B8EF1181C0EE}" ShortID="101681425">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SpecialProjectilePop" ID="{1034AEC0-7624-4672-850D-363C883AC170}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="SpecialPop_Switch" ID="{59B74854-E6DB-45A3-AFDD-00B9DBB78AFB}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -62,7 +62,7 @@
 						<Action Name="" ID="{AD88B92D-D006-4BD9-BFB3-48F59CAEDAFD}" ShortID="227754215">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MenuSelect" ID="{2675F85F-A7A2-4100-A9CA-5A2FE27331A0}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="MenuSelect_Switch" ID="{3C7137BD-1418-440A-9878-CC7293E8E807}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -73,7 +73,7 @@
 						<Action Name="" ID="{110F445A-95AB-45CE-9CE4-6D9610F6C109}" ShortID="343577255">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Random_Clear" ID="{1F9F5837-95A6-46ED-AF51-CDCE4CAEE2D4}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="Clear_Switch" ID="{35AAA825-CA44-4F3C-AA90-D8D11FD6E362}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -117,7 +117,7 @@
 						<Action Name="" ID="{5CD7F1E3-3651-4FA7-905C-3E07C473A346}" ShortID="201573077">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Death" ID="{E8CC4A9E-2EF6-42CC-A80A-22F93C8E5C91}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="Death_Switch" ID="{E9A97B1B-45F0-4596-8DAC-61679046276B}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -128,7 +128,7 @@
 						<Action Name="" ID="{B82BB227-AFB4-4AE8-93D5-163EEFEB9BC3}" ShortID="477073913">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MithrixKill" ID="{CAF1CF32-30CD-4FCF-9375-A4EA28523F2C}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="MithrixKill_Switch" ID="{C1B52C4C-C495-4D24-929A-9FE6FD284520}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -139,7 +139,7 @@
 						<Action Name="" ID="{6204709C-1FC9-45FA-BA19-92436B38703D}" ShortID="550607993">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="FirstLevelStart" ID="{B8C5A153-3939-4AEF-AD63-BF5A545EF73C}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="FirstLevelSwitch" ID="{94F1C6A9-A3C9-4F51-BE93-E1D1EC08E474}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -150,7 +150,7 @@
 						<Action Name="" ID="{EC6B2C33-8FF8-41D1-9E5B-261F52A0B2AB}" ShortID="582429950">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="IntoUtility" ID="{3A4DB2D5-7AAA-4D4E-898A-2D6E7D690366}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="IntoUtility_Switch" ID="{FDB9310E-440B-4CEC-94BD-BCADA925BDFF}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -161,7 +161,62 @@
 						<Action Name="" ID="{5AD7A9E1-ADFE-4D99-8D7C-77FF9C5381F2}" ShortID="649424198">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="UtilityImpact" ID="{3764C4E4-B3DA-4DAA-A9B3-A8270DF7970D}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+									<ObjectRef Name="UtilityImpact_Switch" ID="{39E5B6D2-0E74-4B47-9DC6-498C82F8B0B1}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_VoidlingKill" ID="{AACFE430-DEBB-445B-9403-9709183206AF}">
+					<ChildrenList>
+						<Action Name="" ID="{46451EE5-A081-4C53-9A35-B06E24EE9D7D}" ShortID="322365286">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Defeating Voidling_Guardian" ID="{99AB45EE-A01F-4A7F-A7B5-7AA7775142F3}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Obliterate" ID="{DBB19944-84C8-430A-AB09-694D4782E088}">
+					<ChildrenList>
+						<Action Name="" ID="{FFCF28DD-FAD2-4922-8926-C80FFE76A67E}" ShortID="547744425">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Obliteration_Guardian" ID="{40318154-9B6E-49D1-863F-A89B1DE7495B}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TakingBundleofFireworks" ID="{32723E65-5BD9-4530-BF9D-1039A12DCA2D}">
+					<ChildrenList>
+						<Action Name="" ID="{998D7938-9B98-43E4-8482-98535BB51D9C}" ShortID="405207065">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pickingup BundleofFireworks_Guardian" ID="{9864349A-0793-41E9-82B0-408EC07CFFDE}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TakingCrowbar" ID="{8677A4D8-6806-4A72-AEA2-71D26070EF51}">
+					<ChildrenList>
+						<Action Name="" ID="{DC4D8D4A-47CB-4CDA-9C5C-CEE55C948C56}" ShortID="408002231">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pickingup Crowbar_Guardian" ID="{1C88BB1B-390C-4F6D-8088-18781E4C9F38}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TakingHardlightAferburner" ID="{B8C82E60-7C1E-45DD-BE36-4F415FA011F6}">
+					<ChildrenList>
+						<Action Name="" ID="{33304E29-5AE3-4A54-81D5-29710932439E}" ShortID="672204899">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pickingup Hardlight Aferburner_Guardian" ID="{3CE37DF4-D3B7-499B-A6E0-3C214D058DE8}" WorkUnitID="{BFFD26E8-39BE-47DF-9DC1-BFFDFA410515}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

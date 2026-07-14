@@ -1,3 +1,10 @@
+## 1.3.0
+
+- Added new skin with unique vfx and sfx
+- Added new passive skill
+- Fixed invisible ragdoll
+- Fixed visual glitch with genesis loop item
+
 ## 1.2.1
 
 - Fixed ragdoll in multiplayer

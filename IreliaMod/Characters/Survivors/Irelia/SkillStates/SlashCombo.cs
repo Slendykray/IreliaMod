@@ -1,6 +1,7 @@
 ﻿using IreliaMod.Modules.BaseStates;
 using IreliaMod.Survivors.Irelia.Components;
 using RoR2;
+using RoR2.Projectile;
 using RoR2.Skills;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
         private float doubleAttackStartPercentTime = 0.2f;
 
         private bool fireDouble;
+
+        private PassiveController passiveController;
 
         public override void OnEnter()
         {
@@ -54,10 +57,24 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
             impactSound = IreliaAssets.swordHitSoundEvent.index;
 
 
+            passiveController = GetComponent<PassiveController>();
+            int num = 0;
+
+            if (passiveController.passiveType == PassiveController.Passives.Strike)
+            {
+                num = 4;
+            }
+
+            if (passiveController.passiveType == PassiveController.Passives.Shuriken)
+            {
+                num = 3;
+            }
+
             controller = GetComponent<IreliaController>();
             controller.attackNum++;
 
-            fireDouble = controller.attackNum == 4;
+            //fireDouble = controller.attackNum == 4;
+            fireDouble = controller.attackNum == num;
 
             base.OnEnter();
         }
@@ -87,7 +104,34 @@ namespace IreliaMod.Survivors.Irelia.SkillStates
             if (fireStarted && fireDouble)
             {
                 GetComponent<IreliaController>().attackNum = 0;
-                outer.SetNextState(new SlashPassive());
+                fireDouble = false;
+
+                if (passiveController.passiveType == PassiveController.Passives.Strike)
+                {
+                    outer.SetNextState(new SlashPassive());
+                }
+
+                if (passiveController.passiveType == PassiveController.Passives.Shuriken)
+                {
+                    //outer.SetNextState(new ThrowBomb());
+                    if (isAuthority)
+                    {
+                        Ray aimRay = base.GetAimRay();
+
+                        ProjectileManager.instance.FireProjectile(
+                            IreliaAssets.shurikenProjectilePrefab,
+                            aimRay.origin,
+                            Util.QuaternionSafeLookRotation(aimRay.direction),
+                            gameObject,
+                            characterBody.damage * IreliaStaticValues.shurikenDamageCoefficient,
+                            0f,
+                            Util.CheckRoll(characterBody.crit, characterBody.master),
+                            damageType: DamageSource.Special
+                        );
+                    }
+                }
+
+
             }
           
 

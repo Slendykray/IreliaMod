@@ -20,6 +20,8 @@ namespace IreliaMod.Survivors.Irelia.Components
 
         private bool startPlayed;
 
+        private bool obliteratePlayed;
+
         private CharacterBody characterBody;
 
         private void Awake()
@@ -34,8 +36,24 @@ namespace IreliaMod.Survivors.Irelia.Components
 
             On.EntityStates.SurvivorPod.ReleaseFinished.OnEnter += ReleaseFinished_OnEnter;
 
-           
+
+            On.EntityStates.Interactables.MSObelisk.ReadyToEndGame.OnEnter += ReadyToEndGame_OnEnter;
         }
+
+        private void ReadyToEndGame_OnEnter(On.EntityStates.Interactables.MSObelisk.ReadyToEndGame.orig_OnEnter orig, EntityStates.Interactables.MSObelisk.ReadyToEndGame self)
+        {
+            orig(self);
+
+            if (!obliteratePlayed)
+            {
+                obliteratePlayed = true;
+                Util.PlaySound("Play_Obliterate", base.gameObject);
+            }
+
+    
+        }
+
+    
 
         private void ReleaseFinished_OnEnter(On.EntityStates.SurvivorPod.ReleaseFinished.orig_OnEnter orig, EntityStates.SurvivorPod.ReleaseFinished self)
         {
@@ -60,6 +78,12 @@ namespace IreliaMod.Survivors.Irelia.Components
             if (damageReport.victim.body.bodyIndex == RoR2.BodyCatalog.FindBodyIndex("BrotherHurtBody"))
             {
                 Util.PlaySound("Play_MithrixKill", base.gameObject);
+            }
+
+
+            if (damageReport.victim.body.bodyIndex == RoR2.BodyCatalog.FindBodyIndex("MiniVoidRaidCrabBodyPhase3"))
+            {
+                Util.PlaySound("Play_VoidlingKill", base.gameObject);
             }
         }
 
@@ -92,6 +116,23 @@ namespace IreliaMod.Survivors.Irelia.Components
             {
                 Util.PlaySound("Play_TakeFrostRelic", base.gameObject);
             }
+
+
+
+            if (itemIndex == ItemCatalog.FindItemIndex("Firework"))
+            {
+                Util.PlaySound("Play_TakingBundleofFireworks", base.gameObject);
+            }
+
+            if (itemIndex == ItemCatalog.FindItemIndex("Crowbar"))
+            {
+                Util.PlaySound("Play_TakingCrowbar", base.gameObject);
+            }
+
+            if (itemIndex == ItemCatalog.FindItemIndex("UtilitySkillMagazine"))
+            {
+                Util.PlaySound("Play_TakingHardlightAferburner", base.gameObject);
+            }
         }
 
         private void TeleporterInteraction_onTeleporterFinishGlobal(TeleporterInteraction obj)
@@ -112,6 +153,11 @@ namespace IreliaMod.Survivors.Irelia.Components
             On.RoR2.GlobalEventManager.OnCharacterDeath -= GlobalEventManager_OnCharacterDeath;
 
             On.EntityStates.SurvivorPod.ReleaseFinished.OnEnter -= ReleaseFinished_OnEnter;
+
+
+            On.EntityStates.Interactables.MSObelisk.ReadyToEndGame.OnEnter -= ReadyToEndGame_OnEnter;
+
+
             //On.RoR2.Inventory.GiveItem_ItemIndex_int -= Inventory_GiveItem_ItemIndex_int;
             //BossGroup.onBossGroupStartServer -= BossGroup_onBossGroupStartServer;
             //BossGroup.onBossGroupDefeatedServer -= BossGroup_onBossGroupDefeatedServer;

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D2AEDD2E-C251-4205-91EE-1F4A4BFD88E5}" SchemaVersion="119">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{D2AEDD2E-C251-4205-91EE-1F4A4BFD88E5}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{D2AEDD2E-C251-4205-91EE-1F4A4BFD88E5}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="IreliaSkin" ID="{D59C4FB4-0226-4A19-A32F-6D8A5884FC71}">
+					<ChildrenList>
+						<Switch Name="Default" ID="{FB4C293D-BD7B-4AB3-B88D-ADEB0F51F0A9}"/>
+						<Switch Name="Guardian" ID="{7D09BE06-6D63-475B-8566-FF86DCADFB6E}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

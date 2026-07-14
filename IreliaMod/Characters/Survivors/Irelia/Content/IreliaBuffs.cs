@@ -22,10 +22,10 @@ namespace IreliaMod.Survivors.Irelia
 
 
             executionBuff = Modules.Content.CreateAndAddBuff("IreliaExecutionBuff",
-             null,
+              null,
              Color.white,
              false,
-             false);
+             true);
 
             atkSpeedBuff = Modules.Content.CreateAndAddBuff("IreliaAtkSpeedBuff",
              LegacyResourcesAPI.Load<BuffDef>("BuffDefs/AttackSpeedOnCrit").iconSprite,

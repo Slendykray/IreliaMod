@@ -12,32 +12,32 @@ namespace IreliaMod.Survivors.Irelia
 {
     public static class IreliaAssets
     {
-        // particle effects
-        public static GameObject swordSwingEffect;
-        public static GameObject swordHitImpactEffect;
 
-        public static GameObject bombExplosionEffect;
-
-        // networked hit sounds
-        public static NetworkSoundEventDef swordHitSoundEvent;
-
-        //projectiles
-        public static GameObject bombProjectilePrefab;
 
         private static AssetBundle _assetBundle;
 
+        public static NetworkSoundEventDef swordHitSoundEvent;
 
-        public static GameObject shieldEffect;
-        public static GameObject bladeVFX;
+        //public static Material bladesGlowMat;
+        //public static Material bladesDefMat;
+
+
+        //public static GameObject swordSwingEffect;
+        //public static GameObject swordHitImpactEffect;
+
+        //public static GameObject shieldEffect;
+        //public static GameObject bladeVFX;
         
-        public static GameObject dashEffect;
+        //public static GameObject dashEffect;
 
-        public static Material bladesGlowMat;
-        public static Material bladesDefMat;
+        //public static GameObject edgeProjectilePrefab;
 
-        public static GameObject edgeProjectilePrefab;
+        //public static GameObject edgeEffect;
 
-        public static GameObject edgeEffect;
+        //public static GameObject shurikenProjectilePrefab;
+
+
+
         public static void Init(AssetBundle assetBundle)
         {
 
@@ -45,134 +45,222 @@ namespace IreliaMod.Survivors.Irelia
 
             RiskOfOptions.ModSettingsManager.SetModIcon(_assetBundle.LoadAsset<Sprite>("texIreliaIcon"));
 
-
-
             swordHitSoundEvent = Content.CreateAndAddNetworkSoundEventDef("HenrySwordHit");
-        
 
-            GameObject prefab = _assetBundle.LoadAsset<GameObject>("ExecutionMark");
+            //GameObject prefab = _assetBundle.LoadAsset<GameObject>("ExecutionMark");
 
-            R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
-            R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
+            //R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
+            //R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
 
             CreateEffects();
 
-            CreateProjectiles();
+            //CreateEffects();
+
+            //CreateProjectiles();
+
         }
 
-        #region effects
+        //#region effects
+        //public static void CreateEffects()
+        //{
+
+
+
+        //    //bladesDefMat = _assetBundle.LoadAsset<Material>("matIreliaRor");
+        //    //bladesGlowMat = _assetBundle.LoadAsset<Material>("BladeGlowfMat");
+
+
+
+        //    GameObject prefab = _assetBundle.LoadAsset<GameObject>("ExecutionMark");
+
+        //    R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
+        //    R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(prefab, condition, useBestFitRadius: true);
+
+
+
+        //    swordSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", true);
+        //    swordHitImpactEffect = _assetBundle.LoadEffect("IreliaHit");
+
+        //    shieldEffect = _assetBundle.LoadAsset<GameObject>("Shield2");
+        //    bladeVFX = _assetBundle.LoadAsset<GameObject>("BladeVFX");
+
+        //    dashEffect = _assetBundle.LoadAsset<GameObject>("Dash2");
+
+
+        //    shurikenProjectilePrefab = _assetBundle.LoadAsset<GameObject>("Shuriken");
+
+        //    PrefabAPI.RegisterNetworkPrefab(shurikenProjectilePrefab);
+        //    Content.AddProjectilePrefab(shurikenProjectilePrefab);
+
+
+        //    edgeProjectilePrefab = _assetBundle.LoadAsset<GameObject>("EdgeKnife");
+        //    edgeProjectilePrefab.AddComponent<SpawnDiamond>();
+
+        //    PrefabAPI.RegisterNetworkPrefab(edgeProjectilePrefab);
+        //    Content.AddProjectilePrefab(edgeProjectilePrefab);
+
+
+        //    edgeEffect = _assetBundle.LoadAsset<GameObject>("Diamond");
+        //    var knifeSpawn = edgeEffect.transform.Find("EdgeEffect/Irelia-Vanguard's Edge/KnifeSpawn").gameObject.AddComponent<IreliaKnifeSpawn>();
+        //    knifeSpawn.knifeObj = _assetBundle.LoadAsset<GameObject>("Irelia-Knife");
+        //    knifeSpawn.transformParent = knifeSpawn.transform.Find("Parent");
+
+        //    List<Transform> start = new List<Transform>();
+        //    List<Transform> end = new List<Transform>();
+        //    Transform[] AllChildren = knifeSpawn.transform.GetComponentsInChildren<Transform>();
+
+        //    foreach (Transform child in AllChildren)
+        //    {
+        //        if (child.name.Contains("Point"))
+        //        {
+        //            if (child.parent.parent.name.Contains("Knife-Start") || child.parent.name.Contains("Knife-Start"))
+        //                start.Add(child);
+
+        //            if (child.parent.parent.name.Contains("Knife-End") || child.parent.name.Contains("Knife-End"))
+        //                end.Add(child);
+        //        }    
+        //    }
+        //    knifeSpawn.startPoint = start.ToArray();
+        //    knifeSpawn.endPoint = end.ToArray();
+
+        //    PrefabAPI.RegisterNetworkPrefab(edgeEffect);
+        //    Content.AddProjectilePrefab(edgeEffect);
+        //}
+
+
+        //#endregion effects
+
+        public enum Skins
+        {
+            Default = 0,
+            Guardian = 1,
+        }
+
+        private static Dictionary<Skins, GameObject> _swordSwingEffects = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _swordHitImpactEffects = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _shieldEffects = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _bladeVFXs = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _dashEffects = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _shurikenProjectilePrefabs = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _edgeProjectilePrefabs = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _edgeEffects = new Dictionary<Skins, GameObject>();
+        private static Dictionary<Skins, GameObject> _executionMarks = new Dictionary<Skins, GameObject>();
+
+        public static GameObject swordSwingEffect { get; private set; }
+        public static GameObject swordHitImpactEffect { get; private set; }
+        public static GameObject shieldEffect { get; private set; }
+        public static GameObject bladeVFX { get; private set; }
+        public static GameObject dashEffect { get; private set; }
+        public static GameObject shurikenProjectilePrefab { get; private set; }
+        public static GameObject edgeProjectilePrefab { get; private set; }
+        public static GameObject edgeEffect { get; private set; }
+        public static GameObject executionMark { get; private set; }
+
+        private static readonly Dictionary<Skins, string> SkinAssetSuffix = new Dictionary<Skins, string>
+        {
+            { Skins.Default,  "" },
+            { Skins.Guardian, "_Guardian" },
+        };
+
+        private static GameObject LoadSkinAsset(string baseName, Skins skin)
+        {
+            string suffix = SkinAssetSuffix.TryGetValue(skin, out var s) ? s : "";
+            var asset = _assetBundle.LoadAsset<GameObject>(baseName + suffix);
+            return asset != null ? asset : _assetBundle.LoadAsset<GameObject>(baseName);
+        }
+
+        private static GameObject LoadSkinEffect(string baseName, Skins skin, bool someFlag = false)
+        {
+            string suffix = SkinAssetSuffix.TryGetValue(skin, out var s) ? s : "";
+            var effect = _assetBundle.LoadEffect(baseName + suffix, someFlag);
+            return effect != null ? effect : _assetBundle.LoadEffect(baseName, someFlag);
+        }
+
         private static void CreateEffects()
         {
-            CreateBombExplosionEffect();
-
-            swordSwingEffect = _assetBundle.LoadEffect("IreliaSlashAttack", true);
-            swordHitImpactEffect = _assetBundle.LoadEffect("IreliaHit");
-
-
-            shieldEffect = _assetBundle.LoadAsset<GameObject>("Shield2");
-            bladeVFX = _assetBundle.LoadAsset<GameObject>("BladeVFX");
-
-            dashEffect = _assetBundle.LoadAsset<GameObject>("Dash2");
-
-            bladesDefMat = _assetBundle.LoadAsset<Material>("matIreliaRor");
-            bladesGlowMat = _assetBundle.LoadAsset<Material>("BladeGlowfMat");
-
-
-
-
-            edgeProjectilePrefab = _assetBundle.LoadAsset<GameObject>("EdgeKnife");
-            edgeProjectilePrefab.AddComponent<SpawnDiamond>();
-
-
-            edgeEffect = _assetBundle.LoadAsset<GameObject>("Diamond");
-            var knifeSpawn = edgeEffect.transform.Find("EdgeEffect/Irelia-Vanguard's Edge/KnifeSpawn").gameObject.AddComponent<IreliaKnifeSpawn>();
-            knifeSpawn.knifeObj = _assetBundle.LoadAsset<GameObject>("Irelia-Knife");
-            knifeSpawn.transformParent = knifeSpawn.transform.Find("Parent");
-
-            List<Transform> start = new List<Transform>();
-            List<Transform> end = new List<Transform>();
-            Transform[] AllChildren = knifeSpawn.transform.GetComponentsInChildren<Transform>();
-
-            foreach (Transform child in AllChildren)
+            foreach (Skins skin in Enum.GetValues(typeof(Skins)))
             {
-                if (child.name.Contains("Point"))
+
+                //Skins currentSkin = skin;
+                //var executionMark = LoadSkinAsset("ExecutionMark", skin);
+
+                //R2API.TempVisualEffectAPI.EffectCondition condition = body =>
+                //{
+                //    var tracker = body.gameObject.GetComponent<ExecutionMarkTracker>();
+                //    return tracker && tracker.skin == currentSkin;
+                //};
+
+                ////R2API.TempVisualEffectAPI.EffectCondition condition = body => body.HasBuff(IreliaBuffs.executionBuff);
+                //R2API.TempVisualEffectAPI.AddTemporaryVisualEffect(executionMark, condition, useBestFitRadius: true);
+                _executionMarks[skin] = LoadSkinAsset("ExecutionMark2", skin);
+
+                _swordSwingEffects[skin] = LoadSkinEffect("IreliaSlashAttack", skin, true);
+                _swordHitImpactEffects[skin] = LoadSkinEffect("IreliaHit", skin);
+
+                _shieldEffects[skin] = LoadSkinAsset("Shield2", skin);
+                _bladeVFXs[skin] = LoadSkinAsset("BladeVFX", skin);
+                _dashEffects[skin] = LoadSkinAsset("Dash2", skin);
+
+                var shuriken = LoadSkinAsset("Shuriken", skin);
+                PrefabAPI.RegisterNetworkPrefab(shuriken);
+                Content.AddProjectilePrefab(shuriken);
+                _shurikenProjectilePrefabs[skin] = shuriken;
+
+                var edgeProjectile = LoadSkinAsset("EdgeKnife", skin);
+                edgeProjectile.AddComponent<SpawnDiamond>();
+                PrefabAPI.RegisterNetworkPrefab(edgeProjectile);
+                Content.AddProjectilePrefab(edgeProjectile);
+                _edgeProjectilePrefabs[skin] = edgeProjectile;
+
+                var edgeEffectObj = LoadSkinAsset("Diamond", skin);
+                var knifeSpawn = edgeEffectObj.transform
+                    .Find("EdgeEffect/Irelia-Vanguard's Edge/KnifeSpawn")
+                    .gameObject.AddComponent<IreliaKnifeSpawn>();
+
+                knifeSpawn.knifeObj = LoadSkinAsset("Irelia-Knife", skin);
+                knifeSpawn.transformParent = knifeSpawn.transform.Find("Parent");
+
+                var start = new List<Transform>();
+                var end = new List<Transform>();
+                foreach (Transform child in knifeSpawn.GetComponentsInChildren<Transform>())
                 {
+                    if (!child.name.Contains("Point")) continue;
                     if (child.parent.parent.name.Contains("Knife-Start") || child.parent.name.Contains("Knife-Start"))
                         start.Add(child);
-
                     if (child.parent.parent.name.Contains("Knife-End") || child.parent.name.Contains("Knife-End"))
                         end.Add(child);
-                }    
+                }
+                knifeSpawn.startPoint = start.ToArray();
+                knifeSpawn.endPoint = end.ToArray();
+
+                PrefabAPI.RegisterNetworkPrefab(edgeEffectObj);
+                Content.AddProjectilePrefab(edgeEffectObj);
+                _edgeEffects[skin] = edgeEffectObj;
             }
-            knifeSpawn.startPoint = start.ToArray();
-            knifeSpawn.endPoint = end.ToArray();
 
-
-            PrefabAPI.RegisterNetworkPrefab(edgeProjectilePrefab);
-            Content.AddProjectilePrefab(edgeProjectilePrefab);
-
-            PrefabAPI.RegisterNetworkPrefab(edgeEffect);
-            Content.AddProjectilePrefab(edgeEffect);
+            SetEffects(Skins.Default, null);
         }
 
-
-        private static void CreateBombExplosionEffect()
+        public static void SetEffects(Skins skin, GameObject source)
         {
-            bombExplosionEffect = _assetBundle.LoadEffect("BombExplosionEffect", "HenryBombExplosion");
+            swordSwingEffect = _swordSwingEffects[skin];
+            swordHitImpactEffect = _swordHitImpactEffects[skin];
+            shieldEffect = _shieldEffects[skin];
+            bladeVFX = _bladeVFXs[skin];
+            dashEffect = _dashEffects[skin];
+            shurikenProjectilePrefab = _shurikenProjectilePrefabs[skin];
+            edgeProjectilePrefab = _edgeProjectilePrefabs[skin];
+            edgeEffect = _edgeEffects[skin];
+            executionMark = _executionMarks[skin];
 
-            if (!bombExplosionEffect)
-                return;
-
-            ShakeEmitter shakeEmitter = bombExplosionEffect.AddComponent<ShakeEmitter>();
-            shakeEmitter.amplitudeTimeDecay = true;
-            shakeEmitter.duration = 0.5f;
-            shakeEmitter.radius = 200f;
-            shakeEmitter.scaleShakeRadiusWithLocalScale = false;
-
-            shakeEmitter.wave = new Wave
+            if (IreliaConfig.altSfx.Value)
             {
-                amplitude = 1f,
-                frequency = 40f,
-                cycleOffset = 0f
-            };
-
-        }
-        #endregion effects
-
-        #region projectiles
-        private static void CreateProjectiles()
-        {
-          
-            //CreateBombProjectile();
-            //Content.AddProjectilePrefab(bombProjectilePrefab);
+                AkSoundEngine.SetSwitch("IreliaSkin", skin.ToString(), source);
+            }
+              
+   
         }
 
-        private static void CreateBombProjectile()
-        {
-            //highly recommend setting up projectiles in editor, but this is a quick and dirty way to prototype if you want
-            bombProjectilePrefab = Asset.CloneProjectilePrefab("CommandoGrenadeProjectile", "HenryBombProjectile");
 
-            //remove their ProjectileImpactExplosion component and start from default values
-            UnityEngine.Object.Destroy(bombProjectilePrefab.GetComponent<ProjectileImpactExplosion>());
-            ProjectileImpactExplosion bombImpactExplosion = bombProjectilePrefab.AddComponent<ProjectileImpactExplosion>();
-            
-            bombImpactExplosion.blastRadius = 16f;
-            bombImpactExplosion.blastDamageCoefficient = 1f;
-            bombImpactExplosion.falloffModel = BlastAttack.FalloffModel.None;
-            bombImpactExplosion.destroyOnEnemy = true;
-            bombImpactExplosion.lifetime = 12f;
-            bombImpactExplosion.impactEffect = bombExplosionEffect;
-            bombImpactExplosion.lifetimeExpiredSound = Content.CreateAndAddNetworkSoundEventDef("HenryBombExplosion");
-            bombImpactExplosion.timerAfterImpact = true;
-            bombImpactExplosion.lifetimeAfterImpact = 0.1f;
-
-            ProjectileController bombController = bombProjectilePrefab.GetComponent<ProjectileController>();
-
-            if (_assetBundle.LoadAsset<GameObject>("HenryBombGhost") != null)
-                bombController.ghostPrefab = _assetBundle.CreateProjectileGhostPrefab("HenryBombGhost");
-            
-            bombController.startSound = "";
-        }
-        #endregion projectiles
     }
 }

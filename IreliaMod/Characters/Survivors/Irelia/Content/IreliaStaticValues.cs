@@ -15,5 +15,7 @@ namespace IreliaMod.Survivors.Irelia
         public const float shieldDamageCoefficient = 10f;
 
         public const float edgeDamageCoefficient = 5f;
+
+        public const float shurikenDamageCoefficient = 2f;
     }
 }

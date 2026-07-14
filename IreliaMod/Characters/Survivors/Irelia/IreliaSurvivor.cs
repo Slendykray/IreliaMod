@@ -119,6 +119,7 @@ namespace IreliaMod.Survivors.Irelia
             bodyPrefab.AddComponent<IreliaController>();
             displayPrefab.AddComponent<MenuSound>();
             bodyPrefab.AddComponent<QuoteController>();
+
             //bodyPrefab.AddComponent<HuntressTrackerComopnent>();
             //anything else here
         }
@@ -150,7 +151,7 @@ namespace IreliaMod.Survivors.Irelia
             //remove the genericskills from the commando body we cloned
             Skills.ClearGenericSkills(bodyPrefab);
             //add our own
-            //AddPassiveSkill();
+            AddPassiveSkill();
             AddPrimarySkills();
             AddSecondarySkills();
             AddUtiitySkills();
@@ -161,53 +162,39 @@ namespace IreliaMod.Survivors.Irelia
         //also skip if this is your first look at skills
         private void AddPassiveSkill()
         {
-            //option 1. fake passive icon just to describe functionality we will implement elsewhere
-            bodyPrefab.GetComponent<SkillLocator>().passiveSkill = new SkillLocator.PassiveSkill
-            {
-                enabled = true,
-                skillNameToken = HENRY_PREFIX + "PASSIVE_NAME",
-                skillDescriptionToken = HENRY_PREFIX + "PASSIVE_DESCRIPTION",
-                //keywordToken = "KEYWORD_STUNNING",
-                icon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
-            };
-
-            ////option 2. a new SkillFamily for a passive, used if you want multiple selectable passives
-            //GenericSkill passiveGenericSkill = Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, "PassiveSkill");
-            //SkillDef passiveSkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
+            bodyPrefab.AddComponent<PassiveController>();
+            ////option 1. fake passive icon just to describe functionality we will implement elsewhere
+            //bodyPrefab.GetComponent<SkillLocator>().passiveSkill = new SkillLocator.PassiveSkill
             //{
-            //    skillName = "HenryPassive",
+            //    enabled = true,
             //    skillNameToken = HENRY_PREFIX + "PASSIVE_NAME",
             //    skillDescriptionToken = HENRY_PREFIX + "PASSIVE_DESCRIPTION",
-            //    keywordTokens = new string[] { "KEYWORD_AGILE" },
-            //    skillIcon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
+            //    //keywordToken = "KEYWORD_STUNNING",
+            //    icon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
+            //};
 
-            //    //unless you're somehow activating your passive like a skill, none of the following is needed.
-            //    //but that's just me saying things. the tools are here at your disposal to do whatever you like with
+            //option 2. a new SkillFamily for a passive, used if you want multiple selectable passives
 
-            //    //activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shoot)),
-            //    //activationStateMachineName = "Weapon1",
-            //    //interruptPriority = EntityStates.InterruptPriority.Skill,
+            bodyPrefab.GetComponent<PassiveController>().passiveGenericSkill = Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, "PassiveSkill");
 
-            //    //baseRechargeInterval = 1f,
-            //    //baseMaxStock = 1,
+            SkillDef passiveSkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "IreliaPassiveStrike",
+                skillNameToken = HENRY_PREFIX + "PASSIVE_STRIKE_NAME",
+                skillDescriptionToken = HENRY_PREFIX + "PASSIVE_STRIKE_DESCRIPTION",
+                skillIcon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
+            });
+            Skills.AddSkillsToFamily(bodyPrefab.GetComponent<PassiveController>().passiveGenericSkill.skillFamily, passiveSkillDef1);
 
-            //    //rechargeStock = 1,
-            //    //requiredStock = 1,
-            //    //stockToConsume = 1,
+            SkillDef passiveSkillDef2 = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "IreliaPassiveShuriken",
+                skillNameToken = HENRY_PREFIX + "PASSIVE_SHURIKEN_NAME",
+                skillDescriptionToken = HENRY_PREFIX + "PASSIVE_SHURIKEN_DESCRIPTION",
+                skillIcon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
 
-            //    //resetCooldownTimerOnUse = false,
-            //    //fullRestockOnAssign = true,
-            //    //dontAllowPastMaxStocks = false,
-            //    //mustKeyPress = false,
-            //    //beginSkillCooldownOnSkillEnd = false,
-
-            //    //isCombatSkill = true,
-            //    //canceledFromSprinting = false,
-            //    //cancelSprintingOnActivation = false,
-            //    //forceSprintDuringState = false,
-
-            //});
-            //Skills.AddSkillsToFamily(passiveGenericSkill.skillFamily, passiveSkillDef1);
+            });
+            Skills.AddSkillsToFamily(bodyPrefab.GetComponent<PassiveController>().passiveGenericSkill.skillFamily, passiveSkillDef2);
         }
 
         //if this is your first look at skilldef creation, take a look at Secondary first
@@ -376,9 +363,9 @@ namespace IreliaMod.Survivors.Irelia
             //pass in meshes as they are named in your assetbundle
             //currently not needed as with only 1 skin they will simply take the default meshes
             //uncomment this when you have another skin
-            //defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshIrelia",
-            //    "meshBlade");
+            defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "meshIrelia",
+                "meshBlade");
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
@@ -387,25 +374,25 @@ namespace IreliaMod.Survivors.Irelia
             //uncomment this when you have a mastery skin
             #region MasterySkin
 
-            //////creating a new skindef as we did before
-            //SkinDef masterySkin = Modules.Skins.CreateSkinDef(HENRY_PREFIX + "MASTERY_SKIN_NAME",
-            //    assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
-            //    defaultRendererinfos,
-            //    prefabCharacterModel.gameObject,
-            //    null);
+            ////creating a new skindef as we did before
+            SkinDef masterySkin = Modules.Skins.CreateSkinDef(HENRY_PREFIX + "GUARDIAN_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texSkinGuardian"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                null);
 
-            //////adding the mesh replacements as above. 
-            //////if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
-            //masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshIreliaWanderer",
-            //    null);
+            ////adding the mesh replacements as above. 
+            ////if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
+            masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
+                "meshIreliaGuardian",
+                null);
 
-            //////masterySkin has a new set of RendererInfos (based on default rendererinfos)
-            //////you can simply access the RendererInfos' materials and set them to the new materials for your skin.
-            //masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matIreliaWanderer");
-            //masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matBlade");
+            ////masterySkin has a new set of RendererInfos (based on default rendererinfos)
+            ////you can simply access the RendererInfos' materials and set them to the new materials for your skin.
+            masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matIreliaGuardian");
+            masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matIreliaGuardian");
 
-            //////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
+            ////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
             //masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
             //{
             //    new SkinDef.GameObjectActivation
@@ -414,9 +401,9 @@ namespace IreliaMod.Survivors.Irelia
             //        shouldActivate = false,
             //    }
             //};
-            ////simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
+            //simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
 
-            //skins.Add(masterySkin);
+            skins.Add(masterySkin);
 
             #endregion
 
@@ -442,6 +429,21 @@ namespace IreliaMod.Survivors.Irelia
         private void AddHooks()
         {
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
+
+            On.EntityStates.VagrantNovaItem.BaseVagrantNovaItemState.OnEnter += BaseVagrantNovaItemState_OnEnter;
+        }
+
+        private void BaseVagrantNovaItemState_OnEnter(On.EntityStates.VagrantNovaItem.BaseVagrantNovaItemState.orig_OnEnter orig, EntityStates.VagrantNovaItem.BaseVagrantNovaItemState self)
+        {
+            orig(self);
+
+            if (self.attachedBody)
+            {
+                if (self.attachedBody.name.Contains(bodyName))
+                {
+                    GameObject.Destroy(self.chargeSparks);
+                }
+            }      
         }
 
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, R2API.RecalculateStatsAPI.StatHookEventArgs args)

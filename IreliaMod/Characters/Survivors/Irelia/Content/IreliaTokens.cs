@@ -49,11 +49,15 @@ namespace IreliaMod.Survivors.Irelia
 
             #region Skins
             Language.Add(prefix + "MASTERY_SKIN_NAME", "Alternate");
+            Language.Add(prefix + "GUARDIAN_SKIN_NAME", "Star Guardian");
             #endregion
 
             #region Passive
-            Language.Add(prefix + "PASSIVE_NAME", "Bladedancer passive");
-            Language.Add(prefix + "PASSIVE_DESCRIPTION", "Every fourth attack becomes a quick double attack.");
+            Language.Add(prefix + "PASSIVE_STRIKE_NAME", "Ionian Fervor");
+            Language.Add(prefix + "PASSIVE_STRIKE_DESCRIPTION", "Every fourth attack becomes a quick double attack.");
+
+            Language.Add(prefix + "PASSIVE_SHURIKEN_NAME", "Ionian Shuriken");
+            Language.Add(prefix + "PASSIVE_SHURIKEN_DESCRIPTION", $"Every third attack fire shuriken for {Tokens.DamageValueText(IreliaStaticValues.shurikenDamageCoefficient)}.");
             #endregion
 
             #region Primary

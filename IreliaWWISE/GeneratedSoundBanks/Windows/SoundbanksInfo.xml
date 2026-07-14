@@ -25,14 +25,54 @@
 				<GameParameter Id="3252579413" Name="Volume_Irelia_Voice"/>
 				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="128911350" Name="IreliaSkin">
+					<Switches>
+						<Switch Id="84881332" Name="Guardian"/>
+						<Switch Id="782826392" Name="Default"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3417082243" Type="User" Language="SFX" Hash="{E9433179-4C80-0FB0-0863-B8111CE1D032}">
+		<SoundBank Id="3417082243" Type="User" Language="SFX" Hash="{27696A53-CF55-CA1B-C3C9-BF5E4DC2F6BC}">
 			<ShortName>IreliaBank</ShortName>
 			<Path>IreliaBank.bnk</Path>
 			<Media>
+				<File Id="26227508" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Defeating Voidling_Guardian.wav</ShortName>
+					<CachePath>SFX/Defeating Voidling_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="36107014" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FirstLevelStart_Guardian.wav</ShortName>
+					<CachePath>SFX/FirstLevelStart_Guardian_EDCD4836.wem</CachePath>
+				</File>
 				<File Id="49884936" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Clear1.wav</ShortName>
 					<CachePath>SFX/Clear1_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="65817941" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pickingup BundleofFireworks_Guardian.wav</ShortName>
+					<CachePath>SFX/Pickingup BundleofFireworks_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="72878538" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MithrixDefeat_Guardian.wav</ShortName>
+					<CachePath>SFX/MithrixDefeat_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="127243950" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SpecialCharge_Guardian.wav</ShortName>
+					<CachePath>SFX/SpecialCharge_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="184578513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary3_Guardian.wav</ShortName>
+					<CachePath>SFX/Primary3_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="194762955" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pickingup Crowbar_Guardian.wav</ShortName>
+					<CachePath>SFX/Pickingup Crowbar_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="201648554" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear3_Guardian.wav</ShortName>
+					<CachePath>SFX/Clear3_Guardian_EDCD4836.wem</CachePath>
 				</File>
 				<File Id="247979181" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UtilityImpact.wav</ShortName>
@@ -58,13 +98,49 @@
 					<ShortName>TakingCeremonialDagger.wav</ShortName>
 					<CachePath>SFX/TakingCeremonialDagger_EDCD4836.wem</CachePath>
 				</File>
+				<File Id="379277422" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UtilityImpact_Guardian.wav</ShortName>
+					<CachePath>SFX/UtilityImpact_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="464664672" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary2_Guardian.wav</ShortName>
+					<CachePath>SFX/Primary2_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="479427381" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary1_Guardian.wav</ShortName>
+					<CachePath>SFX/Primary1_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="497015466" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear2_Guardian.wav</ShortName>
+					<CachePath>SFX/Clear2_Guardian_EDCD4836.wem</CachePath>
+				</File>
 				<File Id="663448044" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dash1.wav</ShortName>
 					<CachePath>SFX/Dash1_EDCD4836.wem</CachePath>
 				</File>
+				<File Id="667776449" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pickingup Hardlight Aferburner_Guardian.wav</ShortName>
+					<CachePath>SFX/Pickingup Hardlight Aferburner_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="709750450" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Obliteration_Guardian.wav</ShortName>
+					<CachePath>SFX/Obliteration_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="714844252" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary4_Guardian.wav</ShortName>
+					<CachePath>SFX/Primary4_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="725121702" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IntoUtility_Guardian.wav</ShortName>
+					<CachePath>SFX/IntoUtility_Guardian_EDCD4836.wem</CachePath>
+				</File>
 				<File Id="728914966" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>TakingTriTippedDagger.wav</ShortName>
 					<CachePath>SFX/TakingTriTippedDagger_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="731906117" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clear1_Guardian.wav</ShortName>
+					<CachePath>SFX/Clear1_Guardian_EDCD4836.wem</CachePath>
 				</File>
 				<File Id="765247232" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Primary5.wav</ShortName>
@@ -74,6 +150,14 @@
 					<ShortName>SpecialProjectilePop.wav</ShortName>
 					<CachePath>SFX/SpecialProjectilePop_EDCD4836.wem</CachePath>
 				</File>
+				<File Id="781131077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SpecialImpact_Guardian.wav</ShortName>
+					<CachePath>SFX/SpecialImpact_Guardian_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="806194656" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Primary5_Guardian.wav</ShortName>
+					<CachePath>SFX/Primary5_Guardian_EDCD4836.wem</CachePath>
+				</File>
 				<File Id="813527898" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dash2.wav</ShortName>
 					<CachePath>SFX/Dash2_EDCD4836.wem</CachePath>
@@ -81,6 +165,10 @@
 				<File Id="824973440" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MithrixKill.wav</ShortName>
 					<CachePath>SFX/MithrixKill_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="884784154" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MenuSelect_Guardian.wav</ShortName>
+					<CachePath>SFX/MenuSelect_Guardian_EDCD4836.wem</CachePath>
 				</File>
 				<File Id="891034906" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IntoUtility.wav</ShortName>
@@ -90,13 +178,25 @@
 					<ShortName>TakeFrostRelic.wav</ShortName>
 					<CachePath>SFX/TakeFrostRelic_EDCD4836.wem</CachePath>
 				</File>
+				<File Id="936146868" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Death_Guardian.wav</ShortName>
+					<CachePath>SFX/Death_Guardian_EDCD4836.wem</CachePath>
+				</File>
 				<File Id="960584940" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Primary4.wav</ShortName>
 					<CachePath>SFX/Primary4_EDCD4836.wem</CachePath>
 				</File>
+				<File Id="996652225" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dash2_Guardian.wav</ShortName>
+					<CachePath>SFX/Dash2_Guardian_EDCD4836.wem</CachePath>
+				</File>
 				<File Id="1008262305" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Primary2.wav</ShortName>
 					<CachePath>SFX/Primary2_EDCD4836.wem</CachePath>
+				</File>
+				<File Id="1010782665" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dash1_Guardian.wav</ShortName>
+					<CachePath>SFX/Dash1_Guardian_EDCD4836.wem</CachePath>
 				</File>
 				<File Id="1029006959" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Clear2.wav</ShortName>
@@ -113,70 +213,218 @@
 			</Media>
 			<Events>
 				<Event Id="1172822028" Name="Play_Death">
-					<MediaRefs>
-						<MediaRef Id="256846165"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="936146868"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="256846165"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="1912845862" Name="Play_FirstLevelStart">
-					<MediaRefs>
-						<MediaRef Id="1068996500"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="36107014"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="1068996500"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="143413728" Name="Play_IntoUtility">
-					<MediaRefs>
-						<MediaRef Id="891034906"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="725121702"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="891034906"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="40516875" Name="Play_MenuSelect">
-					<MediaRefs>
-						<MediaRef Id="1068846924"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="884784154"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="1068846924"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="4060337257" Name="Play_MithrixKill">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="72878538"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="824973440"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1345661927" Name="Play_Obliterate">
 					<MediaRefs>
-						<MediaRef Id="824973440"/>
+						<MediaRef Id="709750450"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="345818273" Name="Play_Random_Clear">
-					<MediaRefs>
-						<MediaRef Id="49884936"/>
-						<MediaRef Id="1029006959"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="201648554"/>
+								<MediaRef Id="497015466"/>
+								<MediaRef Id="731906117"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="49884936"/>
+								<MediaRef Id="1029006959"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="3992142222" Name="Play_Random_Dash">
-					<MediaRefs>
-						<MediaRef Id="663448044"/>
-						<MediaRef Id="813527898"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="996652225"/>
+								<MediaRef Id="1010782665"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="663448044"/>
+								<MediaRef Id="813527898"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="777342324" Name="Play_Random_Primary">
-					<MediaRefs>
-						<MediaRef Id="255415109"/>
-						<MediaRef Id="315400640"/>
-						<MediaRef Id="765247232"/>
-						<MediaRef Id="960584940"/>
-						<MediaRef Id="1008262305"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="184578513"/>
+								<MediaRef Id="464664672"/>
+								<MediaRef Id="479427381"/>
+								<MediaRef Id="714844252"/>
+								<MediaRef Id="806194656"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="255415109"/>
+								<MediaRef Id="315400640"/>
+								<MediaRef Id="765247232"/>
+								<MediaRef Id="960584940"/>
+								<MediaRef Id="1008262305"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="1733778635" Name="Play_SpecialCharge">
-					<MediaRefs>
-						<MediaRef Id="266311733"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="127243950"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="266311733"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="3211982643" Name="Play_SpecialProjectilePop">
-					<MediaRefs>
-						<MediaRef Id="266311733"/>
-						<MediaRef Id="773608577"/>
-					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="127243950"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="266311733"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="781131077"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="773608577"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="3458780708" Name="Play_TakeFrostRelic">
 					<MediaRefs>
 						<MediaRef Id="936145382"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="191890797" Name="Play_TakingBundleofFireworks">
+					<MediaRefs>
+						<MediaRef Id="65817941"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3169746167" Name="Play_TakingCeremonialDagger">
 					<MediaRefs>
 						<MediaRef Id="372938331"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1083893302" Name="Play_TakingCrowbar">
+					<MediaRefs>
+						<MediaRef Id="194762955"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1688868325" Name="Play_TakingHardlightAferburner">
+					<MediaRefs>
+						<MediaRef Id="667776449"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3064956693" Name="Play_TakingTriTippedDagger">
@@ -185,8 +433,24 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="2647463512" Name="Play_UtilityImpact">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="84881332"/>
+							<MediaRefs>
+								<MediaRef Id="379277422"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="128911350" Id="782826392" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="247979181"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1678114868" Name="Play_VoidlingKill">
 					<MediaRefs>
-						<MediaRef Id="247979181"/>
+						<MediaRef Id="26227508"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -194,7 +458,15 @@
 				<GameParameter Id="3252579413" Name="Volume_Irelia_Voice"/>
 				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="128911350" Name="IreliaSkin">
+					<Switches>
+						<Switch Id="84881332" Name="Guardian"/>
+						<Switch Id="782826392" Name="Default"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{684C8A05-6B36-7E30-421D-8F4BFA1A3BB4}</FileHash>
+	<FileHash>{8754407D-E6DB-1523-DE50-121DD28105E3}</FileHash>
 </SoundBanksInfo>
