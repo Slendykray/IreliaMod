@@ -1,3 +1,7 @@
+## 1.3.1
+
+- Fixed genesis loop(and potentially other) visual effects
+
 ## 1.3.0
 
 - Added new skin with unique vfx and sfx

@@ -430,7 +430,7 @@ namespace IreliaMod.Survivors.Irelia
         {
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
 
-            On.EntityStates.VagrantNovaItem.BaseVagrantNovaItemState.OnEnter += BaseVagrantNovaItemState_OnEnter;
+            //On.EntityStates.VagrantNovaItem.BaseVagrantNovaItemState.OnEnter += BaseVagrantNovaItemState_OnEnter;
         }
 
         private void BaseVagrantNovaItemState_OnEnter(On.EntityStates.VagrantNovaItem.BaseVagrantNovaItemState.orig_OnEnter orig, EntityStates.VagrantNovaItem.BaseVagrantNovaItemState self)
