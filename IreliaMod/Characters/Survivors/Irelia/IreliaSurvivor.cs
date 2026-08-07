@@ -63,10 +63,9 @@ namespace IreliaMod.Survivors.Irelia
                     childName = "Blades",
                 },
         };
-
-        public override UnlockableDef characterUnlockableDef => IreliaUnlockables.characterUnlockableDef;
         
-        //public override ItemDisplaysBase itemDisplays => new HenryItemDisplays();
+        public override UnlockableDef characterUnlockableDef => IreliaUnlockables.characterUnlockableDef;
+        //public override ItemDisplaysBase itemDisplays => new IreliaItemDisplays();
         public override ItemDisplaysBase itemDisplays => null;
 
         //set in base classes

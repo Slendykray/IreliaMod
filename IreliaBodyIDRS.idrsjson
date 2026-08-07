@@ -1,0 +1,287 @@
+{
+    "bodyName": "IreliaBody",
+    "skinName": "",
+    "itemGroups": [],
+    "equipmentGroups": [
+        {
+            "name": "EliteEarthEquipment",
+            "rules": [
+                {
+                    "guid": "f76a390c2ffbf9645862f81533eafc69",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.49941614270210268,
+                        "y": 0.49941614270210268,
+                        "z": 0.49941614270210268
+                    },
+                    "localPos": {
+                        "x": -0.006728734355419874,
+                        "y": 0.09961576759815216,
+                        "z": -0.04311225190758705
+                    },
+                    "localAngles": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        },
+        {
+            "name": "EliteFireEquipment",
+            "rules": [
+                {
+                    "guid": "880352d2f519466409abd39061d75b79",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": -0.07999999821186066,
+                        "y": 0.07999999821186066,
+                        "z": 0.07999999821186066
+                    },
+                    "localPos": {
+                        "x": 0.03708447515964508,
+                        "y": 0.12145845592021942,
+                        "z": 0.002446993486955762
+                    },
+                    "localAngles": {
+                        "x": 52.33855056762695,
+                        "y": 166.80064392089845,
+                        "z": 344.3612976074219
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                },
+                {
+                    "guid": "880352d2f519466409abd39061d75b79",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.07999999821186066,
+                        "y": 0.07999999821186066,
+                        "z": 0.07999999821186066
+                    },
+                    "localPos": {
+                        "x": -0.027243534103035928,
+                        "y": 0.121458500623703,
+                        "z": 0.003404413117095828
+                    },
+                    "localAngles": {
+                        "x": 53.621341705322269,
+                        "y": 192.29150390625,
+                        "z": 357.18597412109377
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        },
+        {
+            "name": "EliteHauntedEquipment",
+            "rules": [
+                {
+                    "guid": "f75c662c5bc0d744d8919219eeba482d",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.0461997389793396,
+                        "y": 0.0461997389793396,
+                        "z": 0.0461997389793396
+                    },
+                    "localPos": {
+                        "x": 0.01103054266422987,
+                        "y": 0.23162215948104859,
+                        "z": -0.023610807955265046
+                    },
+                    "localAngles": {
+                        "x": 286.2770690917969,
+                        "y": 172.04983520507813,
+                        "z": 11.27245807647705
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        },
+        {
+            "name": "EliteIceEquipment",
+            "rules": [
+                {
+                    "guid": "767a76f115c24384498eb6bed7decc4d",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.02840389497578144,
+                        "y": 0.02840389497578144,
+                        "z": 0.02840389497578144
+                    },
+                    "localPos": {
+                        "x": -0.0031219585798680784,
+                        "y": 0.2819955348968506,
+                        "z": 0.0060488698072731499
+                    },
+                    "localAngles": {
+                        "x": 283.4156494140625,
+                        "y": 201.2406768798828,
+                        "z": 342.1994323730469
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        },
+        {
+            "name": "EliteLightningEquipment",
+            "rules": [
+                {
+                    "guid": "01c99be16781ea64cb7c24f1ff1354d4",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.15724773705005647,
+                        "y": 0.15724773705005647,
+                        "z": 0.15724773705005647
+                    },
+                    "localPos": {
+                        "x": 0.004507947713136673,
+                        "y": 0.18474827706813813,
+                        "z": -0.05852295085787773
+                    },
+                    "localAngles": {
+                        "x": 339.3512268066406,
+                        "y": 181.90989685058595,
+                        "z": 1.7438141107559205
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                },
+                {
+                    "guid": "01c99be16781ea64cb7c24f1ff1354d4",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.12577620148658753,
+                        "y": 0.12577620148658753,
+                        "z": 0.12577620148658753
+                    },
+                    "localPos": {
+                        "x": -0.003347555408254266,
+                        "y": 0.08760423213243485,
+                        "z": -0.10688371956348419
+                    },
+                    "localAngles": {
+                        "x": 343.1309509277344,
+                        "y": 179.9023895263672,
+                        "z": 357.8323059082031
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        },
+        {
+            "name": "EliteLunarEquipment",
+            "rules": [
+                {
+                    "guid": "652606fbf5021f645b450f51e774524e",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.11730660498142243,
+                        "y": 0.11730660498142243,
+                        "z": 0.11730660498142243
+                    },
+                    "localPos": {
+                        "x": -0.02564176358282566,
+                        "y": 0.04519163817167282,
+                        "z": -0.15278048813343049
+                    },
+                    "localAngles": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        },
+        {
+            "name": "ElitePoisonEquipment",
+            "rules": [
+                {
+                    "guid": "5071e940404ac11438977d61b4f37e5c",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.04247358441352844,
+                        "y": 0.04247358441352844,
+                        "z": 0.04247358441352844
+                    },
+                    "localPos": {
+                        "x": 0.0034639956429600717,
+                        "y": 0.17064166069030763,
+                        "z": 0.014600351452827454
+                    },
+                    "localAngles": {
+                        "x": 279.567626953125,
+                        "y": 293.4001159667969,
+                        "z": 76.35096740722656
+                    },
+                    "childName": "Head",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        },
+        {
+            "name": "EliteVoidEquipment",
+            "rules": [
+                {
+                    "guid": "a5888055b2e8dfe479af511631631c0a",
+                    "assetBundle": "",
+                    "assetPath": "",
+                    "localScale": {
+                        "x": 0.10524661839008331,
+                        "y": 0.10524661839008331,
+                        "z": 0.10524661839008331
+                    },
+                    "localPos": {
+                        "x": 0.007761114276945591,
+                        "y": 0.3501943051815033,
+                        "z": 0.02286091074347496
+                    },
+                    "localAngles": {
+                        "x": 287.8472900390625,
+                        "y": 49.64551544189453,
+                        "z": 334.7996826171875
+                    },
+                    "childName": "Chest",
+                    "childPath": "",
+                    "limbMask": 0,
+                    "ruleType": 0
+                }
+            ]
+        }
+    ]
+}

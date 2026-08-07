@@ -9,6 +9,11 @@
             return DamageText("Stunning. ");
         }
 
+        public static string SubText(string text)
+        {
+            return $"<style=cSub>{text}</style>";
+        }
+
         public static string DamageText(string text)
         {
             return $"<style=cIsDamage>{text}</style>";

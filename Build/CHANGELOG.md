@@ -1,6 +1,12 @@
+## 1.3.2
+
+- Added lore
+- Adjusted emission a bit
+- Fixed jitter bones
+
 ## 1.3.1
 
-- Fixed genesis loop(and potentially other) visual effects
+- Fixed genesis loop visual effect
 
 ## 1.3.0
 

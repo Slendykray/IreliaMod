@@ -26,13 +26,15 @@ namespace IreliaMod.Survivors.Irelia.Components
 
         private TeamComponent teamComponent;
 
-        private SkinnedMeshRenderer sk;
+        //private SkinnedMeshRenderer sk;
         private void Awake()
         {
             this.characterBody = base.GetComponent<CharacterBody>();
             this.teamComponent = base.GetComponent<TeamComponent>();
 
-            sk = GetChildLocator().FindChild("Blades").GetComponent<SkinnedMeshRenderer>();
+            characterBody.modelLocator.modelTransform.GetComponent<CharacterModel>().ignoreJitterBones = true;
+
+            //sk = GetChildLocator().FindChild("Blades").GetComponent<SkinnedMeshRenderer>();
         }
 
         public IreliaAssets.Skins skinType = IreliaAssets.Skins.Default;

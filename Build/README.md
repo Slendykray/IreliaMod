@@ -14,4 +14,5 @@ You can change voicelines volume in game settings.
 # Credits
 - Slendykray - coding/unity
 - kdadrew - character model
+- plnk. - logbook lore
 - Riot Games - rest of the assets
